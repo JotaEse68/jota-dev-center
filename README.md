@@ -10,12 +10,12 @@ Escanea tu carpeta de proyectos y los muestra como tarjetas con estado Git, favo
 
 Es una **app de escritorio (Electron)** con un backend Express embebido. También puede ejecutarse como app web local en `http://localhost:3333`.
 
-> **Plataforma:** Windows (usa PowerShell 7 para lanzar terminales). El soporte WSL/Ubuntu está incluido para proyectos en Linux.
+> **Plataforma:** Windows (instalador `.exe` en Releases), y **macOS / Linux** vía build desde código o GitHub Actions (`.dmg` / `.AppImage`). En Windows usa PowerShell 7; en macOS abre Terminal.app; en Linux usa gnome-terminal. Soporte **WSL/Ubuntu** incluido.
 
 ## ✨ Características
 
 - 📂 **Escaneo automático** de tu carpeta de proyectos al abrir (añade nuevas, quita borradas).
-- ✦ **Claude Code** y **Codex** en la carpeta del proyecto con un clic.
+- 🤖 **IA configurable** por proyecto: Claude Code, Codex, **Cursor, Gemini, Aider, Cline…** (cualquier CLI) con un clic.
 - 🧩 Terminal, **VS Code / Cursor / Explorer**, `dev` y `build`.
 - 🔀 **Git seguro**: status, pull, commit (con mensaje) y push (con confirmación).
 - ⬇ **Clonar de GitHub** desde la app (con tu lista de repos vía GitHub CLI o pegando la URL).

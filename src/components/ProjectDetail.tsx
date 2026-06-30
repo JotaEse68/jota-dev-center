@@ -17,6 +17,17 @@ interface Props {
 
 const SENSITIVE = /remove-item|rm\s|rmdir|del\s|format|reset --hard|clean -|drop\s/i;
 const TYPES: ProjectType[] = ['wordpress', 'plugin', 'react', 'vite', 'next', 'app', 'api', 'other'];
+const AI_PRESETS = ['claude', 'codex', 'cursor', 'gemini', 'aider', 'cline', 'continue', 'opencode'];
+
+function aiLabel(cmd: string | undefined): string {
+  const c = (cmd || '').toLowerCase();
+  if (!c || c === 'claude') return 'Claude Code';
+  if (c === 'codex') return 'Codex';
+  if (c === 'cursor') return 'Cursor';
+  if (c === 'gemini') return 'Gemini';
+  if (c === 'aider') return 'Aider';
+  return cmd as string;
+}
 
 function openLink(url?: string) {
   if (url) window.open(url, '_blank', 'noopener');
@@ -26,6 +37,8 @@ type EditForm = {
   name: string;
   type: ProjectType;
   environment: 'windows' | 'wsl';
+  aiCommand: string;
+  secondaryAiCommand: string;
   repoUrl: string;
   deployUrl: string;
   netlifyUrl: string;
@@ -42,6 +55,8 @@ function formFromProject(p: Project): EditForm {
     name: p.name,
     type: p.type,
     environment: p.environment,
+    aiCommand: p.aiCommand ?? 'claude',
+    secondaryAiCommand: p.secondaryAiCommand ?? 'codex',
     repoUrl: p.repoUrl ?? '',
     deployUrl: p.deployUrl ?? '',
     netlifyUrl: p.netlifyUrl ?? '',
@@ -82,6 +97,8 @@ export default function ProjectDetail({ project, git, gitLoading, onToggleFavori
         name: form.name.trim() || project.name,
         type: form.type,
         environment: form.environment,
+        aiCommand: form.aiCommand.trim() || 'claude',
+        secondaryAiCommand: form.secondaryAiCommand.trim() || 'codex',
         repoUrl: form.repoUrl.trim(),
         deployUrl: form.deployUrl.trim(),
         netlifyUrl: form.netlifyUrl.trim(),
@@ -198,16 +215,18 @@ export default function ProjectDetail({ project, git, gitLoading, onToggleFavori
         <h4>Inteligencia artificial</h4>
         <div className="action-row">
           <CommandButton
-            label={`Claude Code (${project.aiCommand || 'claude'})`}
+            label={aiLabel(project.aiCommand)}
             icon="✦"
             variant="primary"
+            title={`Abrir '${project.aiCommand || 'claude'}' en la carpeta`}
             onRun={() => api.openClaude(project.id)}
             onResult={report}
           />
           <CommandButton
-            label={`Codex (${project.secondaryAiCommand || 'codex'})`}
+            label={aiLabel(project.secondaryAiCommand)}
             icon="◆"
             variant="secondary"
+            title={`Abrir '${project.secondaryAiCommand || 'codex'}' en la carpeta`}
             onRun={() => api.openCodex(project.id)}
             onResult={report}
           />
@@ -407,6 +426,29 @@ export default function ProjectDetail({ project, git, gitLoading, onToggleFavori
                   <option value="wsl">WSL</option>
                 </select>
               </label>
+              <label>
+                IA principal (comando)
+                <input
+                  list="ai-presets"
+                  value={form.aiCommand}
+                  placeholder="claude"
+                  onChange={(e) => setForm({ ...form, aiCommand: e.target.value })}
+                />
+              </label>
+              <label>
+                IA secundaria (comando)
+                <input
+                  list="ai-presets"
+                  value={form.secondaryAiCommand}
+                  placeholder="codex"
+                  onChange={(e) => setForm({ ...form, secondaryAiCommand: e.target.value })}
+                />
+              </label>
+              <datalist id="ai-presets">
+                {AI_PRESETS.map((a) => (
+                  <option key={a} value={a} />
+                ))}
+              </datalist>
               <label>
                 GitHub (repo)
                 <input value={form.repoUrl} placeholder="https://github.com/…" onChange={(e) => setForm({ ...form, repoUrl: e.target.value })} />

@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import type { Project } from './projects';
+import { getSettings } from './projects';
 
 /**
  * Escanea una carpeta raíz de proyectos con estructura:
@@ -85,6 +86,7 @@ function buildProject(dir: string, name: string, group: string | undefined): Pro
   const type = detectType(name, group, dir);
   const isPlugin = type === 'plugin' || type === 'wordpress';
   const id = slugify(group ? `${group}-${name}` : name) || slugify(name) || `proj-${Date.now()}`;
+  const settings = getSettings();
   return {
     id,
     name,
@@ -98,9 +100,9 @@ function buildProject(dir: string, name: string, group: string | undefined): Pro
     localUrl: '',
     devCommand: hasFile(dir, 'package.json') ? 'npm run dev' : '',
     buildCommand: hasFile(dir, 'package.json') ? 'npm run build' : '',
-    aiCommand: 'claude',
-    secondaryAiCommand: 'codex',
-    editor: 'vscode',
+    aiCommand: settings.primaryAI || 'claude',
+    secondaryAiCommand: settings.secondaryAI || 'codex',
+    editor: settings.defaultEditor || 'vscode',
     usesVercel: false,
     usesSupabase: false,
     usesRender: false,

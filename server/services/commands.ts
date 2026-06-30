@@ -8,12 +8,58 @@ import {
 } from './environment';
 
 const execFileAsync = promisify(execFile);
+const PLATFORM = process.platform; // 'win32' | 'darwin' | 'linux'
+
+interface LaunchSpec {
+  exe: string;
+  args: string[];
+  fallback?: { exe: string; args: string[] };
+}
+
+function appleScriptEscape(s: string): string {
+  return s.replace(/\\/g, '\\\\').replace(/"/g, '\\"');
+}
 
 /**
- * Lanza una nueva ventana de terminal (pwsh) visible que ejecuta `innerCommand`
- * en la carpeta del proyecto. Para WSL, el comando se ejecuta dentro de bash.
+ * Construye cómo abrir una terminal visible en `path` ejecutando `inner`,
+ * según el sistema operativo y el entorno del proyecto.
+ */
+function buildSpec(project: Project, inner: string): LaunchSpec {
+  // Proyectos WSL (solo en Windows): se ejecuta dentro de Ubuntu.
+  if (project.environment === 'wsl') {
+    const invocation = buildLaunchInvocation('wsl', project.path, inner);
+    return { exe: 'pwsh', args: ['-NoProfile', '-Command', invocation], fallback: { exe: 'powershell', args: ['-NoProfile', '-Command', invocation] } };
+  }
+
+  if (PLATFORM === 'win32') {
+    const invocation = buildLaunchInvocation('windows', project.path, inner);
+    return { exe: 'pwsh', args: ['-NoProfile', '-Command', invocation], fallback: { exe: 'powershell', args: ['-NoProfile', '-Command', invocation] } };
+  }
+
+  if (PLATFORM === 'darwin') {
+    const shellCmd = inner ? `cd '${project.path}' && ${inner}` : `cd '${project.path}'`;
+    const script = `tell application "Terminal" to do script "${appleScriptEscape(shellCmd)}"`;
+    return {
+      exe: 'osascript',
+      args: ['-e', script, '-e', 'tell application "Terminal" to activate'],
+    };
+  }
+
+  // linux y otros
+  const shellCmd = inner ? `cd '${project.path}' && ${inner}; exec bash` : `cd '${project.path}'; exec bash`;
+  return {
+    exe: 'gnome-terminal',
+    args: ['--', 'bash', '-c', shellCmd],
+    fallback: { exe: 'x-terminal-emulator', args: ['-e', `bash -c "${shellCmd.replace(/"/g, '\\"')}"`] },
+  };
+}
+
+/**
+ * Lanza una nueva terminal visible que ejecuta `innerCommand` en la carpeta del
+ * proyecto. Multiplataforma (Windows/macOS/Linux). No esconde la ejecución.
  *
- * No esconde la ejecución: el usuario ve siempre una terminal con feedback.
+ * NOTA: en Windows NO se usa `detached: true` (crearía el proceso sin consola y
+ * la ventana no llegaría a abrirse).
  */
 export function launchTerminal(project: Project, innerCommand: string): { ok: boolean; message: string } {
   const check = validateProjectPath(project.environment, project.path);
@@ -21,26 +67,15 @@ export function launchTerminal(project: Project, innerCommand: string): { ok: bo
     return { ok: false, message: check.message ?? 'Ruta inválida.' };
   }
 
-  const invocation = buildLaunchInvocation(project.environment, project.path, innerCommand);
+  const spec = buildSpec(project, innerCommand);
 
-  // IMPORTANTE: NO usar `detached: true` en Windows. Crea el proceso sin consola
-  // (DETACHED_PROCESS) y entonces el `Start-Process` interno no llega a abrir la
-  // ventana visible. Con windowsHide se oculta solo el lanzador; la ventana de la
-  // terminal la abre Start-Process y sí se ve.
-  function launch(exe: string): boolean {
+  function run(exe: string, args: string[], fb?: { exe: string; args: string[] }): boolean {
     try {
-      const child = spawn(exe, ['-NoProfile', '-Command', invocation], {
-        windowsHide: true,
-        stdio: 'ignore',
-      });
-      // Si el ejecutable no existe, el error llega de forma asíncrona: probamos powershell.
+      const child = spawn(exe, args, { windowsHide: true, stdio: 'ignore' });
       child.on('error', () => {
-        if (exe === 'pwsh') {
+        if (fb) {
           try {
-            spawn('powershell', ['-NoProfile', '-Command', invocation], {
-              windowsHide: true,
-              stdio: 'ignore',
-            }).on('error', () => {});
+            spawn(fb.exe, fb.args, { windowsHide: true, stdio: 'ignore' }).on('error', () => {});
           } catch {
             /* ignore */
           }
@@ -53,11 +88,11 @@ export function launchTerminal(project: Project, innerCommand: string): { ok: bo
     }
   }
 
-  if (launch('pwsh')) {
+  if (run(spec.exe, spec.args, spec.fallback)) {
     return { ok: true, message: 'Terminal lanzada.' };
   }
-  if (launch('powershell')) {
-    return { ok: true, message: 'Terminal lanzada (powershell).' };
+  if (spec.fallback && run(spec.fallback.exe, spec.fallback.args)) {
+    return { ok: true, message: 'Terminal lanzada.' };
   }
   return { ok: false, message: 'No se pudo lanzar la terminal.' };
 }
@@ -71,11 +106,16 @@ export async function commandExists(environment: 'windows' | 'wsl', command: str
       await execFileAsync('wsl', ['-e', 'bash', '-lc', `command -v ${command}`]);
       return true;
     }
-    await execFileAsync('pwsh', [
-      '-NoProfile',
-      '-Command',
-      `if (Get-Command '${command.replace(/'/g, "''")}' -ErrorAction SilentlyContinue) { exit 0 } else { exit 1 }`,
-    ]);
+    if (PLATFORM === 'win32') {
+      await execFileAsync('pwsh', [
+        '-NoProfile',
+        '-Command',
+        `if (Get-Command '${command.replace(/'/g, "''")}' -ErrorAction SilentlyContinue) { exit 0 } else { exit 1 }`,
+      ]);
+      return true;
+    }
+    // macOS / Linux
+    await execFileAsync('sh', ['-c', `command -v ${command}`]);
     return true;
   } catch {
     return false;
@@ -83,8 +123,7 @@ export async function commandExists(environment: 'windows' | 'wsl', command: str
 }
 
 /**
- * Abre la carpeta del proyecto en el Explorador de Windows.
- * Para WSL usa la ruta UNC \\wsl.localhost\...
+ * Abre la carpeta del proyecto en el explorador de archivos del sistema.
  */
 export function openFolder(project: Project, subPath?: string): { ok: boolean; message: string } {
   const check = validateProjectPath(project.environment, project.path);
@@ -96,12 +135,16 @@ export function openFolder(project: Project, subPath?: string): { ok: boolean; m
   if (project.environment === 'wsl') {
     target = wslPathToUnc(project.path);
     if (subPath) target = `${target}\\${subPath}`;
-  } else {
+  } else if (PLATFORM === 'win32') {
     target = subPath ? `${project.path}\\${subPath}` : project.path;
+  } else {
+    target = subPath ? `${project.path}/${subPath}` : project.path;
   }
 
+  const opener = PLATFORM === 'win32' ? 'explorer.exe' : PLATFORM === 'darwin' ? 'open' : 'xdg-open';
+
   try {
-    const child = spawn('explorer.exe', [target], { windowsHide: true, stdio: 'ignore' });
+    const child = spawn(opener, [target], { windowsHide: true, stdio: 'ignore' });
     child.on('error', () => {});
     child.unref();
     return { ok: true, message: `Abriendo ${target}` };
