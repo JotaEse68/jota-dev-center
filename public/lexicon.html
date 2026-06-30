@@ -1,0 +1,2679 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jota Dev Lexicon</title>
+  <meta name="description" content="Tarjetas rápidas para aprender léxico de desarrollo moderno, IA coding y automatización." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <style>
+:root{--bg:#080d18;--panel:#0e1626;--panel2:#121c30;--text:#ecf2ff;--muted:#95a3ba;--line:#26344d;--accent:#62e6c8;--accent2:#7aa2ff;--warn:#ffbf69;--bad:#ff6b6b;--good:#7cf29a;--shadow:0 22px 80px rgba(0,0,0,.35)}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,Segoe UI,system-ui,-apple-system,sans-serif;background:radial-gradient(circle at top left,#14213d 0,#080d18 42%,#050812 100%);color:var(--text);min-height:100vh}button,input,textarea{font:inherit}.app{display:grid;grid-template-columns:280px 1fr;min-height:100vh}.sidebar{border-right:1px solid var(--line);background:rgba(8,13,24,.78);backdrop-filter:blur(14px);padding:24px;position:sticky;top:0;height:100vh;overflow:auto}.brand{display:flex;gap:12px;align-items:center;margin-bottom:22px}.logo{width:48px;height:48px;border-radius:15px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:grid;place-items:center;color:#07101e;font-weight:900;font-size:23px;box-shadow:0 10px 30px rgba(98,230,200,.25)}.brand h1{font-size:18px;margin:0}.brand p{font-size:12px;margin:2px 0;color:var(--muted)}.search{margin:14px 0 18px}.search input{width:100%;background:#07101e;border:1px solid var(--line);color:var(--text);border-radius:14px;padding:13px 14px;outline:none}.search input:focus{border-color:var(--accent)}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:18px}.stat{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:10px;text-align:center}.stat strong{display:block;font-size:18px}.stat span{font-size:11px;color:var(--muted)}.nav-actions{display:grid;gap:8px;margin-bottom:18px}.nav-actions button,.side-item{width:100%;border:1px solid var(--line);background:rgba(18,28,48,.8);color:var(--text);padding:11px 12px;border-radius:13px;cursor:pointer;text-align:left;display:flex;gap:9px;align-items:center}.nav-actions button:hover,.side-item:hover,.side-item.active{border-color:rgba(98,230,200,.8);background:rgba(98,230,200,.08)}.side-label{font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:var(--muted);margin:18px 0 8px}.main{padding:26px 30px 44px;min-width:0}.hero{display:flex;justify-content:space-between;gap:22px;align-items:flex-start;background:linear-gradient(135deg,rgba(98,230,200,.1),rgba(122,162,255,.08));border:1px solid var(--line);border-radius:26px;padding:24px 26px;margin-bottom:22px;box-shadow:var(--shadow)}.hero h2{font-size:32px;margin:0 0 7px}.hero p{margin:0;color:var(--muted);line-height:1.5}.flow{display:flex;gap:9px;flex-wrap:wrap}.flow span{border:1px solid var(--line);background:rgba(8,13,24,.7);padding:8px 10px;border-radius:999px;color:#cfe1ff;font-size:13px}.content,.spark,.quiz,.map,.phrases{background:rgba(14,22,38,.72);border:1px solid var(--line);border-radius:26px;padding:22px;box-shadow:var(--shadow)}.content-head{display:flex;justify-content:space-between;gap:18px;align-items:center;margin-bottom:18px}.content-head h1,.spark h1,.quiz h1,.map h1,.phrases h1{margin:0 0 6px;font-size:28px}.content-head p,.lead{color:var(--muted);margin:0;line-height:1.5}.split{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(340px,.85fr);gap:18px}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;align-content:start;max-height:calc(100vh - 245px);overflow:auto;padding-right:4px}.card{background:linear-gradient(180deg,rgba(18,28,48,.95),rgba(9,15,28,.95));border:1px solid var(--line);border-radius:18px;padding:15px;cursor:pointer;min-height:184px;transition:.15s ease;display:flex;flex-direction:column}.card:hover,.card.selected{border-color:var(--accent);transform:translateY(-2px)}.card h3{margin:13px 0 8px;font-size:21px}.card p{margin:0;color:#b8c5d9;line-height:1.45;font-size:14px}.card-top,.card-bottom{display:flex;justify-content:space-between;align-items:center;gap:8px}.card-bottom{margin-top:auto}.cat,.level,.seen{font-size:11px;color:#cfe1ff;border:1px solid var(--line);padding:5px 8px;border-radius:999px;background:rgba(255,255,255,.03)}.level{text-transform:uppercase;color:var(--accent)}.seen{color:var(--good)}.fav{border:0;background:transparent;color:#53627a;font-size:20px;cursor:pointer}.fav.on{color:#ffd166}.fav.big{font-size:28px}.detail{background:#091120;border:1px solid var(--line);border-radius:22px;padding:20px;max-height:calc(100vh - 245px);overflow:auto}.detail-head{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:start;border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:14px}.big-icon{width:52px;height:52px;border-radius:16px;background:rgba(122,162,255,.14);display:grid;place-items:center;font-size:26px}.detail h2{margin:3px 0 5px;font-size:30px}.detail p{line-height:1.48}.detail-cat{font-size:12px;color:var(--accent);text-transform:uppercase;letter-spacing:.08em}.detail-block,.challenge,.notes,.phrase,.detail-grid>div,.spark-box,.phrase-line{border:1px solid var(--line);background:rgba(18,28,48,.7);border-radius:16px;padding:14px;margin:10px 0}.detail-block strong,.challenge strong,.detail-grid strong{color:#fff}.detail-block p,.challenge p,.detail-grid p,.phrase p,.spark-box p,.phrase-line p{color:#bac8dc;margin:7px 0 0}.example{border-color:rgba(98,230,200,.35)}.phrase{background:linear-gradient(135deg,rgba(98,230,200,.1),rgba(122,162,255,.08))}.phrase span{font-size:12px;color:var(--accent);text-transform:uppercase;letter-spacing:.12em}.phrase button{float:right;background:#0b1322;color:var(--accent);border:1px solid var(--line);border-radius:999px;padding:5px 9px;cursor:pointer}.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.tags{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.tags button{border:1px solid var(--line);background:#0b1322;color:#cfe1ff;border-radius:999px;padding:8px 10px;cursor:pointer}.notes label{display:block;margin-bottom:8px;color:#d9e6ff}.notes textarea{width:100%;min-height:94px;border-radius:14px;border:1px solid var(--line);background:#050a13;color:var(--text);padding:12px;resize:vertical}.primary,.secondary{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:14px;padding:11px 15px;cursor:pointer;margin:12px 8px 0 0;border:1px solid transparent}.primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#05101d;font-weight:800}.secondary{background:rgba(255,255,255,.04);border-color:var(--line);color:var(--text)}.spark-label{display:inline-block;color:#06101a;background:var(--accent);padding:7px 11px;border-radius:999px;font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px}.spark,.quiz{max-width:860px;margin:auto}.options{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin:22px 0}.option{background:#101a2d;border:1px solid var(--line);color:var(--text);padding:16px;border-radius:16px;cursor:pointer;text-align:left}.option:hover{border-color:var(--accent)}.option.correct{border-color:var(--good);background:rgba(124,242,154,.12)}.option.wrong{border-color:var(--bad);background:rgba(255,107,107,.12)}.ok,.bad{padding:14px;border-radius:14px;margin:12px 0}.ok{background:rgba(124,242,154,.12);border:1px solid rgba(124,242,154,.35)}.bad{background:rgba(255,107,107,.12);border:1px solid rgba(255,107,107,.35)}.map-row{border-top:1px solid var(--line);padding:18px 0}.map-row h2{margin:0 0 10px}.map-row div{display:flex;flex-wrap:wrap;gap:8px}.map-row button{background:#0b1322;color:#cfe1ff;border:1px solid var(--line);border-radius:999px;padding:8px 10px;cursor:pointer}.phrase-line strong{color:var(--accent)}.empty{grid-column:1/-1;color:var(--muted);padding:30px;text-align:center;border:1px dashed var(--line);border-radius:18px}@media(max-width:1100px){.app{grid-template-columns:1fr}.sidebar{position:relative;height:auto}.split{grid-template-columns:1fr}.grid,.detail{max-height:none}.hero{display:block}.flow{margin-top:14px}}@media(max-width:680px){.main{padding:16px}.sidebar{padding:16px}.hero{padding:18px;border-radius:20px}.hero h2{font-size:25px}.content,.spark,.quiz,.map,.phrases{padding:16px;border-radius:20px}.detail-grid{grid-template-columns:1fr}.content-head{display:block}.grid{grid-template-columns:1fr}}@media print{body{background:white;color:#111}.sidebar,.hero,.fav,#printBtn,.nav-actions,.search,.stats{display:none!important}.app{display:block}.main{padding:0}.content,.detail,.card{box-shadow:none;background:white;color:#111;border-color:#ddd}.split{display:block}.grid{display:none}.detail{max-height:none}.detail p,.lead,.content-head p{color:#333}}
+</style>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand"><div class="logo">J</div><div><h1>Jota Dev Lexicon</h1><p>Microlearning técnico</p></div></div>
+      <div class="search"><input id="search" placeholder="Buscar término, frase o uso..." /></div>
+      <div class="stats"><div class="stat"><strong id="statCards">0</strong><span>tarjetas</span></div><div class="stat"><strong id="statFavs">0</strong><span>favoritas</span></div><div class="stat"><strong id="statSeen">0</strong><span>vistas</span></div></div>
+      <div class="nav-actions">
+        <button id="viewCards">🗂️ Tarjetas</button>
+        <button id="viewSpark">⚡ Chispa 3 min</button>
+        <button id="viewQuiz">✅ Mini quiz</button>
+        <button id="viewMap">🧭 Mapa léxico</button>
+        <button id="viewPhrases">💬 Frases pro</button>
+      </div>
+      <div class="side-label">Categorías</div>
+      <nav id="sidebar"></nav>
+    </aside>
+    <main class="main">
+      <section class="hero">
+        <div><h2>Aprende los nombres de lo que ya usas</h2><p>Tarjetas breves para entender cuándo usar React, Vite, Node, Git, Claude Code, Vercel, Supabase, Electron y el resto del flujo moderno.</p></div>
+        <div class="flow"><span>PowerShell</span><span>Claude Code</span><span>GitHub</span><span>Vercel</span><span>WSL opcional</span></div>
+      </section>
+      <div id="mainArea"></div>
+    </main>
+  </div>
+  <script>window.DEV_LEXICON_CARDS = [
+  {
+    "id": "powershell",
+    "term": "PowerShell",
+    "category": "Terminal",
+    "level": "base",
+    "shortDefinition": "Shell de Windows para ejecutar comandos, scripts y automatizaciones.",
+    "whatItIs": "Es una consola avanzada de Windows pensada para controlar archivos, procesos, programas y tareas del sistema.",
+    "whatItIsFor": "Sirve para lanzar apps, entrar en proyectos, ejecutar Git, npm, Claude Code, Codex y scripts propios.",
+    "whenToUse": "Úsalo como centro de mando diario para tus proyectos locales.",
+    "realExample": "Abrir un proyecto, ejecutar `claude`, hacer `git status` y lanzar `npm run dev`.",
+    "professionalPhrase": "“El flujo lo ejecuto desde PowerShell 7.”",
+    "relatedTerms": [
+      "CLI",
+      "Script",
+      "PATH",
+      "Alias"
+    ],
+    "miniChallenge": "Ejecuta `pwd`, `ls` y `cd ..` en PowerShell.",
+    "commonMistake": "Pensar que PowerShell es solo “la ventana negra”. Es tu panel de control.",
+    "memoryHook": "PowerShell = mando técnico de Windows."
+  },
+  {
+    "id": "terminal",
+    "term": "Terminal",
+    "category": "Terminal",
+    "level": "base",
+    "shortDefinition": "Ventana donde escribes comandos para controlar herramientas y proyectos.",
+    "whatItIs": "Es una interfaz de texto para hablar con el sistema operativo y las herramientas de desarrollo.",
+    "whatItIsFor": "Sirve para ejecutar comandos más rápido que usando menús visuales.",
+    "whenToUse": "Úsala cuando necesites trabajar con Git, Node, Claude, Codex o scripts.",
+    "realExample": "Desde la terminal arrancas Jota Dev Center o cualquier app local.",
+    "professionalPhrase": "“Abre una terminal en la raíz del proyecto.”",
+    "relatedTerms": [
+      "PowerShell",
+      "CLI",
+      "Comando"
+    ],
+    "miniChallenge": "Abre PowerShell y escribe `node -v`.",
+    "commonMistake": "Confundir terminal con lenguaje de programación. La terminal solo ejecuta comandos.",
+    "memoryHook": "Terminal = hablar con el ordenador en modo directo."
+  },
+  {
+    "id": "cli",
+    "term": "CLI",
+    "category": "Terminal",
+    "level": "base",
+    "shortDefinition": "Interfaz de línea de comandos: usar herramientas escribiendo órdenes.",
+    "whatItIs": "CLI significa Command Line Interface. Es una forma de usar programas sin interfaz visual.",
+    "whatItIsFor": "Sirve para usar Git, npm, Vercel, Claude Code o Codex desde comandos.",
+    "whenToUse": "Úsala cuando quieras velocidad, control y automatización.",
+    "realExample": "`git push`, `npm run dev` y `claude` son comandos CLI.",
+    "professionalPhrase": "“Esta herramienta se usa por CLI.”",
+    "relatedTerms": [
+      "Terminal",
+      "PowerShell",
+      "npm"
+    ],
+    "miniChallenge": "Escribe tres comandos CLI que uses: `git status`, `npm run dev`, `claude`.",
+    "commonMistake": "Pensar que CLI es una app concreta. Es una forma de usar apps.",
+    "memoryHook": "CLI = botones, pero escritos."
+  },
+  {
+    "id": "path",
+    "term": "PATH",
+    "category": "Entorno",
+    "level": "base",
+    "shortDefinition": "Lista de rutas donde Windows busca comandos ejecutables.",
+    "whatItIs": "Es una variable del sistema que le dice a Windows dónde encontrar programas cuando escribes comandos.",
+    "whatItIsFor": "Sirve para poder escribir `code`, `git`, `node`, `claude` o `cursor` desde cualquier carpeta.",
+    "whenToUse": "Revísalo cuando un comando dice “no se reconoce”.",
+    "realExample": "Si `code .` no abre VS Code, probablemente falta en PATH.",
+    "professionalPhrase": "“Ese comando no está en PATH.”",
+    "relatedTerms": [
+      "Variable de entorno",
+      "PowerShell",
+      "CLI"
+    ],
+    "miniChallenge": "Prueba `where git` y `where node` en PowerShell.",
+    "commonMistake": "Instalar una herramienta y pensar que ya funcionará desde terminal. A veces falta añadirla al PATH.",
+    "memoryHook": "PATH = agenda de dónde viven los comandos."
+  },
+  {
+    "id": "alias",
+    "term": "Alias",
+    "category": "Terminal",
+    "level": "base",
+    "shortDefinition": "Nombre corto para ejecutar un comando más largo.",
+    "whatItIs": "Es un atajo que apunta a un comando o función.",
+    "whatItIsFor": "Sirve para ahorrar tiempo con comandos repetidos.",
+    "whenToUse": "Úsalo para acciones frecuentes como abrir perfil, Git status o lanzar dev server.",
+    "realExample": "Crear `gs` para ejecutar `git status`.",
+    "professionalPhrase": "“Tengo alias para mis comandos habituales.”",
+    "relatedTerms": [
+      "PowerShell",
+      "Script",
+      "Perfil"
+    ],
+    "miniChallenge": "Crea mentalmente un alias: `nd` = `npm run dev`.",
+    "commonMistake": "Crear demasiados alias y luego no recordar qué hacen.",
+    "memoryHook": "Alias = apodo de comando."
+  },
+  {
+    "id": "script",
+    "term": "Script",
+    "category": "Automatización",
+    "level": "base",
+    "shortDefinition": "Archivo con comandos preparados para ejecutarse juntos.",
+    "whatItIs": "Es una receta técnica que automatiza pasos.",
+    "whatItIsFor": "Sirve para crear accesos directos, limpiar proyectos, arrancar apps o generar ZIPs.",
+    "whenToUse": "Úsalo cuando repites varias veces la misma secuencia.",
+    "realExample": "`create-desktop-shortcut.ps1` crea un acceso directo en el escritorio.",
+    "professionalPhrase": "“Esto lo resolvemos con un script de PowerShell.”",
+    "relatedTerms": [
+      "PowerShell",
+      "Automatización",
+      "Batch"
+    ],
+    "miniChallenge": "Localiza un archivo `.ps1` o `.bat` y mira qué comandos contiene.",
+    "commonMistake": "Ejecutar scripts sin leer qué hacen.",
+    "memoryHook": "Script = receta automática."
+  },
+  {
+    "id": "variable-entorno",
+    "term": "Variable de entorno",
+    "category": "Entorno",
+    "level": "base",
+    "shortDefinition": "Valor configurable que usan apps y servicios sin meterlo en el código.",
+    "whatItIs": "Es una clave con un valor, disponible para programas y procesos.",
+    "whatItIsFor": "Sirve para guardar API keys, URLs, modos de producción o configuración sensible.",
+    "whenToUse": "Úsala cuando una app necesita un dato distinto entre local y producción.",
+    "realExample": "Vercel usa variables de entorno para claves de Supabase u OpenAI.",
+    "professionalPhrase": "“Eso va en variables de entorno, no hardcodeado.”",
+    "relatedTerms": [
+      "PATH",
+      ".env",
+      "Vercel"
+    ],
+    "miniChallenge": "Busca si un proyecto tiene archivo `.env.example`.",
+    "commonMistake": "Poner claves privadas directamente en el código.",
+    "memoryHook": "Variable de entorno = configuración fuera del código."
+  },
+  {
+    "id": "wsl",
+    "term": "WSL",
+    "category": "Entorno",
+    "level": "intermedio",
+    "shortDefinition": "Sistema para ejecutar Linux dentro de Windows.",
+    "whatItIs": "WSL permite usar Ubuntu y herramientas Linux sin salir de Windows.",
+    "whatItIsFor": "Sirve cuando un proyecto o herramienta funciona mejor en entorno Linux.",
+    "whenToUse": "Úsalo solo para proyectos que lo necesiten, no para mezclar todo.",
+    "realExample": "Editor Pro Max puede vivir en `/home/jota/proyectos/editor-pro-max`.",
+    "professionalPhrase": "“Este proyecto lo corro en WSL porque necesita entorno Linux.”",
+    "relatedTerms": [
+      "Ubuntu",
+      "Linux",
+      "PowerShell"
+    ],
+    "miniChallenge": "Ejecuta `wsl` desde PowerShell y luego `pwd`.",
+    "commonMistake": "Confundir rutas Windows `C:\\` con rutas Linux `/home/`.",
+    "memoryHook": "WSL = Linux dentro de Windows."
+  },
+  {
+    "id": "ubuntu",
+    "term": "Ubuntu",
+    "category": "Entorno",
+    "level": "base",
+    "shortDefinition": "Distribución Linux muy usada para desarrollo.",
+    "whatItIs": "Es un sistema operativo Linux popular, estable y compatible con muchas herramientas dev.",
+    "whatItIsFor": "Sirve como entorno de desarrollo cuando Windows da problemas o el proyecto lo requiere.",
+    "whenToUse": "Úsalo dentro de WSL para proyectos específicos.",
+    "realExample": "Un proyecto en Ubuntu puede abrirse con `wsl -e bash -lc \"cd /home/jota/proyectos/app && claude\"`.",
+    "professionalPhrase": "“Ese proyecto está en Ubuntu/WSL.”",
+    "relatedTerms": [
+      "WSL",
+      "Linux",
+      "Terminal"
+    ],
+    "miniChallenge": "Dentro de Ubuntu escribe `ls` y `cd /home`.",
+    "commonMistake": "Pensar que Ubuntu y PowerShell son lo mismo. Son entornos distintos.",
+    "memoryHook": "Ubuntu = tu taller Linux."
+  },
+  {
+    "id": "directorio-raiz",
+    "term": "Raíz del proyecto",
+    "category": "Entorno",
+    "level": "base",
+    "shortDefinition": "Carpeta principal donde vive un proyecto.",
+    "whatItIs": "Es la carpeta que contiene archivos clave como `package.json`, `.git`, `src` o `README.md`.",
+    "whatItIsFor": "Sirve como punto correcto desde donde ejecutar comandos.",
+    "whenToUse": "Antes de usar Claude, Codex, Git o npm, entra en la raíz del proyecto.",
+    "realExample": "`cd C:\\Users\\Jota\\Projects\\jota-dev-center` antes de ejecutar `claude`.",
+    "professionalPhrase": "“Ejecuta el comando desde la raíz del proyecto.”",
+    "relatedTerms": [
+      "package.json",
+      "Git",
+      "npm"
+    ],
+    "miniChallenge": "Busca el `package.json` de un proyecto. Esa suele ser la raíz.",
+    "commonMistake": "Ejecutar comandos desde una carpeta equivocada.",
+    "memoryHook": "Raíz = puerta principal del proyecto."
+  },
+  {
+    "id": "nodejs",
+    "term": "Node.js",
+    "category": "Backend",
+    "level": "base",
+    "shortDefinition": "Entorno para ejecutar JavaScript fuera del navegador.",
+    "whatItIs": "Permite usar JavaScript en servidores, scripts y herramientas locales.",
+    "whatItIsFor": "Sirve para crear backends, CLIs, automatizaciones y apps locales.",
+    "whenToUse": "Úsalo cuando JavaScript necesita leer archivos, ejecutar comandos o servir una API.",
+    "realExample": "Jota Dev Center usa Node para abrir VS Code, Git, Claude y ZIPs.",
+    "professionalPhrase": "“El backend local corre sobre Node.js.”",
+    "relatedTerms": [
+      "npm",
+      "Express",
+      "JavaScript"
+    ],
+    "miniChallenge": "Ejecuta `node -v`.",
+    "commonMistake": "Creer que Node es un framework visual. No: es el motor JS fuera del navegador.",
+    "memoryHook": "Node = JavaScript fuera del navegador."
+  },
+  {
+    "id": "npm",
+    "term": "npm",
+    "category": "Backend",
+    "level": "base",
+    "shortDefinition": "Gestor de paquetes y comandos de proyectos Node.",
+    "whatItIs": "Instala dependencias y ejecuta scripts definidos en `package.json`.",
+    "whatItIsFor": "Sirve para instalar React, Vite, Express y arrancar proyectos.",
+    "whenToUse": "Úsalo en casi cualquier proyecto JavaScript moderno.",
+    "realExample": "`npm install` y `npm run dev` son comandos diarios.",
+    "professionalPhrase": "“Instala dependencias con npm.”",
+    "relatedTerms": [
+      "Node.js",
+      "package.json",
+      "dependencies"
+    ],
+    "miniChallenge": "Ejecuta `npm -v`.",
+    "commonMistake": "Pensar que npm solo instala. También ejecuta scripts.",
+    "memoryHook": "npm = caja de herramientas de Node."
+  },
+  {
+    "id": "package-json",
+    "term": "package.json",
+    "category": "Backend",
+    "level": "base",
+    "shortDefinition": "Archivo central de configuración de un proyecto Node.",
+    "whatItIs": "Define nombre, scripts, dependencias y metadatos del proyecto.",
+    "whatItIsFor": "Sirve para saber cómo instalar, arrancar y construir una app.",
+    "whenToUse": "Míralo siempre que entres a un proyecto nuevo.",
+    "realExample": "Ahí ves si debes usar `npm run dev`, `npm run build` o `npm start`.",
+    "professionalPhrase": "“Revisa los scripts del package.json.”",
+    "relatedTerms": [
+      "npm",
+      "scripts",
+      "dependencies"
+    ],
+    "miniChallenge": "Abre un `package.json` y localiza la sección `scripts`.",
+    "commonMistake": "Tocar scripts sin entender qué comando ejecutan.",
+    "memoryHook": "package.json = DNI del proyecto Node."
+  },
+  {
+    "id": "dependencies",
+    "term": "Dependencies",
+    "category": "Backend",
+    "level": "base",
+    "shortDefinition": "Librerías necesarias para que la app funcione.",
+    "whatItIs": "Son paquetes que el proyecto necesita en producción o ejecución normal.",
+    "whatItIsFor": "Sirven para añadir funciones sin programarlo todo desde cero.",
+    "whenToUse": "Úsalas cuando una app necesita React, Express, librerías ZIP, etc.",
+    "realExample": "React y Express suelen estar en dependencies.",
+    "professionalPhrase": "“Esa librería va como dependency.”",
+    "relatedTerms": [
+      "devDependencies",
+      "npm",
+      "package.json"
+    ],
+    "miniChallenge": "Mira en package.json qué hay dentro de `dependencies`.",
+    "commonMistake": "Instalar todo sin saber si es necesario.",
+    "memoryHook": "Dependencies = piezas que la app necesita para vivir."
+  },
+  {
+    "id": "devdependencies",
+    "term": "devDependencies",
+    "category": "Backend",
+    "level": "base",
+    "shortDefinition": "Librerías necesarias solo para desarrollar o construir.",
+    "whatItIs": "Son herramientas usadas en desarrollo, pruebas, TypeScript, Vite o compilación.",
+    "whatItIsFor": "Sirven para trabajar, no necesariamente para producción.",
+    "whenToUse": "Úsalas para TypeScript, Vite, linters o herramientas de build.",
+    "realExample": "Vite y TypeScript suelen estar en devDependencies.",
+    "professionalPhrase": "“Esto es solo herramienta de desarrollo, ponlo en devDependencies.”",
+    "relatedTerms": [
+      "dependencies",
+      "Vite",
+      "TypeScript"
+    ],
+    "miniChallenge": "Identifica una devDependency en un package.json.",
+    "commonMistake": "Meter herramientas de desarrollo como si fueran dependencias productivas.",
+    "memoryHook": "devDependencies = herramientas del taller."
+  },
+  {
+    "id": "npm-run-dev",
+    "term": "npm run dev",
+    "category": "Entorno",
+    "level": "base",
+    "shortDefinition": "Comando habitual para arrancar una app en modo desarrollo.",
+    "whatItIs": "Ejecuta el script `dev` definido en package.json.",
+    "whatItIsFor": "Sirve para ver la app local mientras trabajas.",
+    "whenToUse": "Úsalo cuando estás construyendo o probando cambios.",
+    "realExample": "Arrancar Vite en `http://localhost:5173`.",
+    "professionalPhrase": "“Levanta el entorno local con npm run dev.”",
+    "relatedTerms": [
+      "Vite",
+      "localhost",
+      "package.json"
+    ],
+    "miniChallenge": "Ejecuta `npm run` y mira si existe `dev`.",
+    "commonMistake": "Ejecutarlo en una carpeta sin package.json.",
+    "memoryHook": "npm run dev = encender la app para trabajar."
+  },
+  {
+    "id": "npm-run-build",
+    "term": "npm run build",
+    "category": "Deploy",
+    "level": "base",
+    "shortDefinition": "Comando para crear la versión final de una app.",
+    "whatItIs": "Compila y prepara los archivos para producción.",
+    "whatItIsFor": "Sirve para detectar errores antes de desplegar.",
+    "whenToUse": "Úsalo antes de hacer push o antes de subir a Vercel.",
+    "realExample": "Si falla el build, Vercel probablemente también fallará.",
+    "professionalPhrase": "“Pasa build antes de subir cambios.”",
+    "relatedTerms": [
+      "Vercel",
+      "production",
+      "build error"
+    ],
+    "miniChallenge": "Ejecuta `npm run build` en un proyecto y observa si genera `dist`.",
+    "commonMistake": "Confiar solo en que la app local se ve bien. El build puede fallar.",
+    "memoryHook": "build = examen final del proyecto."
+  },
+  {
+    "id": "localhost",
+    "term": "localhost",
+    "category": "Entorno",
+    "level": "base",
+    "shortDefinition": "Dirección que apunta a tu propio ordenador.",
+    "whatItIs": "Es una forma de abrir servicios locales desde el navegador.",
+    "whatItIsFor": "Sirve para probar apps antes de publicarlas.",
+    "whenToUse": "Úsalo durante desarrollo local.",
+    "realExample": "Jota Dev Center puede abrirse en `http://localhost:3333`.",
+    "professionalPhrase": "“Esto corre en localhost.”",
+    "relatedTerms": [
+      "dev server",
+      "Vite",
+      "Express"
+    ],
+    "miniChallenge": "Abre una app local y observa el puerto en la URL.",
+    "commonMistake": "Pensar que localhost es público. Solo vive en tu máquina.",
+    "memoryHook": "localhost = mi ordenador."
+  },
+  {
+    "id": "puerto",
+    "term": "Puerto",
+    "category": "Entorno",
+    "level": "base",
+    "shortDefinition": "Número que identifica por dónde responde una app local.",
+    "whatItIs": "Es una entrada lógica para servicios en tu ordenador.",
+    "whatItIsFor": "Sirve para tener varias apps abiertas a la vez.",
+    "whenToUse": "Úsalo para distinguir apps: 3333, 5173, 3000.",
+    "realExample": "Vite puede usar puerto 5173 y Jota Dev Center el 3333.",
+    "professionalPhrase": "“La app está levantada en el puerto 3333.”",
+    "relatedTerms": [
+      "localhost",
+      "dev server",
+      "Express"
+    ],
+    "miniChallenge": "Mira la URL local y localiza el número después de `:`.",
+    "commonMistake": "Creer que el puerto es parte del nombre de la app.",
+    "memoryHook": "Puerto = puerta de entrada local."
+  },
+  {
+    "id": "dev-server",
+    "term": "Dev server",
+    "category": "Entorno",
+    "level": "base",
+    "shortDefinition": "Servidor local para desarrollo.",
+    "whatItIs": "Es el proceso que sirve la app mientras trabajas.",
+    "whatItIsFor": "Sirve para ver cambios sin publicar nada.",
+    "whenToUse": "Úsalo con Vite, Next o Express durante desarrollo.",
+    "realExample": "`npm run dev` arranca un dev server.",
+    "professionalPhrase": "“El dev server está corriendo.”",
+    "relatedTerms": [
+      "localhost",
+      "Vite",
+      "npm run dev"
+    ],
+    "miniChallenge": "Arranca un proyecto y localiza el mensaje “Local: http://...”.",
+    "commonMistake": "Cerrar la terminal y preguntarse por qué dejó de funcionar la app.",
+    "memoryHook": "Dev server = app encendida en modo taller."
+  },
+  {
+    "id": "javascript",
+    "term": "JavaScript",
+    "category": "Frontend",
+    "level": "base",
+    "shortDefinition": "Lenguaje base de la web moderna.",
+    "whatItIs": "Permite crear comportamiento, lógica e interacción en webs y apps.",
+    "whatItIsFor": "Sirve para React, Node, Vite, Express, Electron y automatizaciones.",
+    "whenToUse": "Úsalo como idioma principal del stack moderno.",
+    "realExample": "Jota Dev Center puede usar JavaScript/TypeScript en frontend y backend.",
+    "professionalPhrase": "“Esto está hecho en JavaScript moderno.”",
+    "relatedTerms": [
+      "TypeScript",
+      "Node.js",
+      "React"
+    ],
+    "miniChallenge": "Localiza un archivo `.js` o `.ts` en un proyecto.",
+    "commonMistake": "Pensar que JavaScript solo sirve para botones web. También sirve para backend.",
+    "memoryHook": "JavaScript = idioma común de web y herramientas."
+  },
+  {
+    "id": "typescript",
+    "term": "TypeScript",
+    "category": "Full-Stack",
+    "level": "intermedio",
+    "shortDefinition": "JavaScript con tipos para reducir errores.",
+    "whatItIs": "Añade reglas de tipos encima de JavaScript para que el código sea más claro y seguro.",
+    "whatItIsFor": "Sirve para apps medianas o grandes donde quieres menos errores tontos.",
+    "whenToUse": "Úsalo en React, Node y proyectos serios con Claude/Codex.",
+    "realExample": "Un componente `ProjectCard.tsx` puede definir qué datos recibe.",
+    "professionalPhrase": "“Lo montamos con TypeScript para controlar tipos.”",
+    "relatedTerms": [
+      "JavaScript",
+      "interface",
+      "props"
+    ],
+    "miniChallenge": "Busca un archivo `.tsx` y localiza una interfaz o type.",
+    "commonMistake": "Pelearse con TypeScript sin entender que está avisando antes de romper.",
+    "memoryHook": "TypeScript = JavaScript con cinturón de seguridad."
+  },
+  {
+    "id": "react",
+    "term": "React",
+    "category": "Frontend",
+    "level": "base",
+    "shortDefinition": "Librería para crear interfaces visuales con componentes.",
+    "whatItIs": "Permite construir pantallas usando piezas reutilizables llamadas componentes.",
+    "whatItIsFor": "Sirve para dashboards, apps web, paneles, formularios y UI dinámica.",
+    "whenToUse": "Úsalo cuando la interfaz cambia según datos o acciones del usuario.",
+    "realExample": "Jota Dev Center usa tarjetas, sidebar y panel de detalle en React.",
+    "professionalPhrase": "“El frontend lo montamos con React.”",
+    "relatedTerms": [
+      "Vite",
+      "Componentes",
+      "State"
+    ],
+    "miniChallenge": "Busca `App.tsx` en un proyecto React.",
+    "commonMistake": "Confundir React con una app completa. React es la capa visual.",
+    "memoryHook": "React = piezas visuales reutilizables."
+  },
+  {
+    "id": "vite",
+    "term": "Vite",
+    "category": "Frontend",
+    "level": "base",
+    "shortDefinition": "Herramienta rápida para arrancar y construir apps modernas.",
+    "whatItIs": "Es un entorno de desarrollo y build optimizado para frontend moderno.",
+    "whatItIsFor": "Sirve para crear apps React rápidas sin configuración pesada.",
+    "whenToUse": "Úsalo para paneles locales, dashboards y prototipos sólidos.",
+    "realExample": "Jota Dev Center puede arrancar con Vite en `localhost:3333`.",
+    "professionalPhrase": "“Para esta app local uso React con Vite.”",
+    "relatedTerms": [
+      "React",
+      "npm run dev",
+      "build"
+    ],
+    "miniChallenge": "Ejecuta `npm run dev` y fíjate si aparece Vite.",
+    "commonMistake": "Confundir Vite con React. Vite arranca; React pinta la UI.",
+    "memoryHook": "Vite = motor rápido del frontend."
+  },
+  {
+    "id": "nextjs",
+    "term": "Next.js",
+    "category": "Frontend",
+    "level": "intermedio",
+    "shortDefinition": "Framework React para webs y apps full-stack más estructuradas.",
+    "whatItIs": "Añade rutas, renderizado, backend y optimización encima de React.",
+    "whatItIsFor": "Sirve para webs públicas, SaaS, SEO y apps en Vercel.",
+    "whenToUse": "Úsalo cuando necesites SEO, rutas públicas, login o producción web seria.",
+    "realExample": "Una landing pública de MiApp puede convenir en Next.",
+    "professionalPhrase": "“Esto pide Next por SEO y despliegue en Vercel.”",
+    "relatedTerms": [
+      "React",
+      "Vercel",
+      "SSR"
+    ],
+    "miniChallenge": "Piensa: ¿Jota Dev Center necesita SEO? Si no, no necesita Next.",
+    "commonMistake": "Usar Next para todo aunque una app local simple no lo necesite.",
+    "memoryHook": "Next = React con estructura de producto web."
+  },
+  {
+    "id": "component",
+    "term": "Componente",
+    "category": "Frontend",
+    "level": "base",
+    "shortDefinition": "Pieza reutilizable de interfaz.",
+    "whatItIs": "Es un bloque visual con su propia lógica y aspecto.",
+    "whatItIsFor": "Sirve para ordenar una UI en partes manejables.",
+    "whenToUse": "Úsalo para tarjetas, menús, botones, paneles o formularios.",
+    "realExample": "`ProjectCard` muestra un proyecto dentro de Jota Dev Center.",
+    "professionalPhrase": "“Esto lo separo en componentes.”",
+    "relatedTerms": [
+      "React",
+      "Props",
+      "UI"
+    ],
+    "miniChallenge": "Identifica 3 componentes posibles en un dashboard.",
+    "commonMistake": "Meter toda la UI en un solo archivo gigante.",
+    "memoryHook": "Componente = LEGO visual."
+  },
+  {
+    "id": "props",
+    "term": "Props",
+    "category": "Frontend",
+    "level": "base",
+    "shortDefinition": "Datos que un componente recibe desde fuera.",
+    "whatItIs": "Son parámetros que permiten reutilizar un componente con contenido distinto.",
+    "whatItIsFor": "Sirven para pasar nombre, estado, tipo o acciones a una pieza visual.",
+    "whenToUse": "Úsalas cuando un componente necesita mostrar datos variables.",
+    "realExample": "`ProjectCard` recibe `name`, `type`, `gitStatus`.",
+    "professionalPhrase": "“Ese componente recibe props.”",
+    "relatedTerms": [
+      "React",
+      "Componente",
+      "TypeScript"
+    ],
+    "miniChallenge": "Imagina qué props necesita una tarjeta de proyecto.",
+    "commonMistake": "Modificar props dentro del componente como si fueran estado propio.",
+    "memoryHook": "Props = datos que entran."
+  },
+  {
+    "id": "state",
+    "term": "State",
+    "category": "Frontend",
+    "level": "base",
+    "shortDefinition": "Datos internos que cambian dentro de la interfaz.",
+    "whatItIs": "Representa información viva de la pantalla.",
+    "whatItIsFor": "Sirve para buscador, filtros, pestaña activa o modal abierto.",
+    "whenToUse": "Úsalo cuando la UI cambia por acciones del usuario.",
+    "realExample": "El filtro “Favoritos” puede vivir en state.",
+    "professionalPhrase": "“Esto debe ir en estado local.”",
+    "relatedTerms": [
+      "React",
+      "Hooks",
+      "useState"
+    ],
+    "miniChallenge": "Piensa qué cambia cuando escribes en un buscador.",
+    "commonMistake": "Usar estado para datos que nunca cambian.",
+    "memoryHook": "State = memoria momentánea de la pantalla."
+  },
+  {
+    "id": "hooks",
+    "term": "Hooks",
+    "category": "Frontend",
+    "level": "intermedio",
+    "shortDefinition": "Funciones de React para usar estado y efectos.",
+    "whatItIs": "Permiten añadir lógica a componentes sin clases.",
+    "whatItIsFor": "Sirven para manejar estado, cargar datos y reaccionar a cambios.",
+    "whenToUse": "Úsalos en componentes funcionales de React.",
+    "realExample": "`useState` guarda el filtro activo; `useEffect` carga proyectos.",
+    "professionalPhrase": "“Uso hooks para manejar estado y carga de datos.”",
+    "relatedTerms": [
+      "useState",
+      "useEffect",
+      "React"
+    ],
+    "miniChallenge": "Busca `useState` en un componente React.",
+    "commonMistake": "Usar hooks sin entender cuándo se ejecutan.",
+    "memoryHook": "Hooks = enchufes de lógica en React."
+  },
+  {
+    "id": "frontend",
+    "term": "Frontend",
+    "category": "Frontend",
+    "level": "base",
+    "shortDefinition": "Parte visual con la que interactúa el usuario.",
+    "whatItIs": "Es la capa de interfaz: pantallas, botones, formularios y navegación.",
+    "whatItIsFor": "Sirve para mostrar información y recoger acciones del usuario.",
+    "whenToUse": "Úsalo al hablar de lo que se ve en navegador o app.",
+    "realExample": "La UI de Jota Dev Center es frontend.",
+    "professionalPhrase": "“El problema está en frontend, no en backend.”",
+    "relatedTerms": [
+      "React",
+      "CSS",
+      "UI"
+    ],
+    "miniChallenge": "Señala qué parte de una app pertenece al frontend.",
+    "commonMistake": "Llamar frontend a toda la app, incluyendo servidor y base de datos.",
+    "memoryHook": "Frontend = lo que ve y toca el usuario."
+  },
+  {
+    "id": "ui",
+    "term": "UI",
+    "category": "Frontend",
+    "level": "base",
+    "shortDefinition": "Interfaz de usuario: lo que se ve y se usa.",
+    "whatItIs": "Incluye botones, layout, textos, tarjetas, menús y formularios.",
+    "whatItIsFor": "Sirve para que la herramienta sea clara y usable.",
+    "whenToUse": "Úsalo al hablar del diseño funcional de una app.",
+    "realExample": "Cards de proyectos, badges Git y botones Claude son UI.",
+    "professionalPhrase": "“Hay que mejorar la UI del dashboard.”",
+    "relatedTerms": [
+      "UX",
+      "Frontend",
+      "CSS"
+    ],
+    "miniChallenge": "Observa una app y nombra 5 elementos UI.",
+    "commonMistake": "Pensar que UI es solo estética. También es claridad de uso.",
+    "memoryHook": "UI = mandos visibles."
+  },
+  {
+    "id": "ux",
+    "term": "UX",
+    "category": "Frontend",
+    "level": "base",
+    "shortDefinition": "Experiencia de usuario: cómo se siente y entiende el uso.",
+    "whatItIs": "Es la facilidad, claridad y fluidez con la que alguien usa una herramienta.",
+    "whatItIsFor": "Sirve para evitar confusión y reducir pasos.",
+    "whenToUse": "Úsalo cuando una app funciona pero es incómoda.",
+    "realExample": "Poner Claude como botón principal mejora la UX de tu flujo.",
+    "professionalPhrase": "“La UX debe seguir mi flujo real.”",
+    "relatedTerms": [
+      "UI",
+      "Dashboard",
+      "Flujo"
+    ],
+    "miniChallenge": "Cuenta cuántos clics necesitas para abrir Claude en un proyecto.",
+    "commonMistake": "Confundir UX con hacer algo bonito. UX es hacerlo usable.",
+    "memoryHook": "UX = que no te haga pensar de más."
+  },
+  {
+    "id": "css",
+    "term": "CSS",
+    "category": "Frontend",
+    "level": "base",
+    "shortDefinition": "Lenguaje para dar estilo visual a HTML/React.",
+    "whatItIs": "Controla colores, tamaños, espacios, tipografía y responsive.",
+    "whatItIsFor": "Sirve para que una app sea clara, profesional y adaptable.",
+    "whenToUse": "Úsalo para diseñar dashboards, cards y layouts.",
+    "realExample": "El tema oscuro de Jota Dev Lexicon está hecho con CSS.",
+    "professionalPhrase": "“Esto es ajuste de CSS, no de lógica.”",
+    "relatedTerms": [
+      "UI",
+      "Responsive",
+      "Frontend"
+    ],
+    "miniChallenge": "Cambia mentalmente qué CSS controla color y tamaño de un botón.",
+    "commonMistake": "Meter estilos sin estructura y acabar con caos visual.",
+    "memoryHook": "CSS = ropa y distribución de la app."
+  },
+  {
+    "id": "responsive",
+    "term": "Responsive",
+    "category": "Frontend",
+    "level": "base",
+    "shortDefinition": "Diseño que se adapta a móvil, tablet y escritorio.",
+    "whatItIs": "Permite que la interfaz funcione en distintos tamaños de pantalla.",
+    "whatItIsFor": "Sirve para que una app no se rompa visualmente en móvil.",
+    "whenToUse": "Úsalo siempre que una app pueda abrirse en distintos dispositivos.",
+    "realExample": "Una card debe verse bien en desktop y móvil.",
+    "professionalPhrase": "“Hay que revisar responsive.”",
+    "relatedTerms": [
+      "CSS",
+      "UI",
+      "Frontend"
+    ],
+    "miniChallenge": "Reduce la ventana del navegador y mira si el layout aguanta.",
+    "commonMistake": "Diseñar solo para tu pantalla grande.",
+    "memoryHook": "Responsive = el diseño se estira sin romperse."
+  },
+  {
+    "id": "backend",
+    "term": "Backend",
+    "category": "Backend",
+    "level": "base",
+    "shortDefinition": "Parte interna que procesa datos, comandos y lógica.",
+    "whatItIs": "Es la capa que no ve el usuario, pero hace el trabajo técnico.",
+    "whatItIsFor": "Sirve para APIs, bases de datos, comandos del sistema y seguridad.",
+    "whenToUse": "Úsalo cuando la app necesita leer archivos, guardar notas o ejecutar Git.",
+    "realExample": "Jota Dev Center necesita backend para abrir PowerShell y crear ZIPs.",
+    "professionalPhrase": "“Eso debe hacerlo el backend, no el frontend.”",
+    "relatedTerms": [
+      "Express",
+      "API",
+      "Node.js"
+    ],
+    "miniChallenge": "Distingue qué hace frontend y qué hace backend en Jota Dev Center.",
+    "commonMistake": "Intentar ejecutar comandos del sistema solo desde React.",
+    "memoryHook": "Backend = motor bajo el capó."
+  },
+  {
+    "id": "express",
+    "term": "Express",
+    "category": "Backend",
+    "level": "base",
+    "shortDefinition": "Framework ligero para crear servidores y APIs con Node.js.",
+    "whatItIs": "Permite definir rutas como `/api/projects` y responder peticiones.",
+    "whatItIsFor": "Sirve para conectar el frontend con acciones locales o datos.",
+    "whenToUse": "Úsalo en apps locales como Jota Dev Center.",
+    "realExample": "Express puede ejecutar `git status` y devolver el resultado al frontend.",
+    "professionalPhrase": "“El backend local lo montamos con Express.”",
+    "relatedTerms": [
+      "Node.js",
+      "API",
+      "Endpoint"
+    ],
+    "miniChallenge": "Piensa qué endpoint necesitaría “abrir Claude”.",
+    "commonMistake": "Confundir Express con frontend. Express vive en backend.",
+    "memoryHook": "Express = camarero de la API."
+  },
+  {
+    "id": "api",
+    "term": "API",
+    "category": "Backend",
+    "level": "base",
+    "shortDefinition": "Puente para que dos partes de una app se comuniquen.",
+    "whatItIs": "Define reglas para pedir datos o ejecutar acciones.",
+    "whatItIsFor": "Sirve para que frontend pida proyectos, notas o comandos al backend.",
+    "whenToUse": "Úsala cuando una parte necesita hablar con otra de forma ordenada.",
+    "realExample": "`GET /api/projects` devuelve la lista de proyectos.",
+    "professionalPhrase": "“Creamos una API local para el panel.”",
+    "relatedTerms": [
+      "Endpoint",
+      "GET",
+      "POST"
+    ],
+    "miniChallenge": "Escribe una URL de API posible: `/api/notes`.",
+    "commonMistake": "Llamar API a cualquier archivo. API es contrato de comunicación.",
+    "memoryHook": "API = mostrador de pedidos."
+  },
+  {
+    "id": "endpoint",
+    "term": "Endpoint",
+    "category": "Backend",
+    "level": "base",
+    "shortDefinition": "Ruta concreta de una API.",
+    "whatItIs": "Es una URL o acción específica que hace algo.",
+    "whatItIsFor": "Sirve para organizar acciones como listar proyectos, guardar notas o crear ZIP.",
+    "whenToUse": "Úsalo al diseñar comunicación frontend-backend.",
+    "realExample": "`POST /api/projects/timeguard/create-zip` puede generar un ZIP.",
+    "professionalPhrase": "“Ese endpoint guarda las notas.”",
+    "relatedTerms": [
+      "API",
+      "GET",
+      "POST"
+    ],
+    "miniChallenge": "Inventa dos endpoints para Jota Dev Center.",
+    "commonMistake": "Crear endpoints sin nombres claros.",
+    "memoryHook": "Endpoint = botón remoto de la API."
+  },
+  {
+    "id": "get",
+    "term": "GET",
+    "category": "Backend",
+    "level": "base",
+    "shortDefinition": "Método HTTP para pedir datos.",
+    "whatItIs": "Es una forma estándar de solicitar información sin modificarla.",
+    "whatItIsFor": "Sirve para leer proyectos, notas o ajustes.",
+    "whenToUse": "Úsalo cuando solo quieres consultar.",
+    "realExample": "`GET /api/projects` lista proyectos.",
+    "professionalPhrase": "“Esto debería ser un GET.”",
+    "relatedTerms": [
+      "POST",
+      "API",
+      "Endpoint"
+    ],
+    "miniChallenge": "Clasifica “ver notas” como GET o POST.",
+    "commonMistake": "Usar GET para acciones que cambian datos.",
+    "memoryHook": "GET = dame información."
+  },
+  {
+    "id": "post",
+    "term": "POST",
+    "category": "Backend",
+    "level": "base",
+    "shortDefinition": "Método HTTP para enviar datos o ejecutar cambios.",
+    "whatItIs": "Es una forma estándar de mandar información al servidor.",
+    "whatItIsFor": "Sirve para guardar notas, marcar favorito o lanzar acciones.",
+    "whenToUse": "Úsalo cuando algo cambia o se ejecuta.",
+    "realExample": "`POST /api/notes/react` guarda una nota.",
+    "professionalPhrase": "“Esto debe ser un POST porque modifica datos.”",
+    "relatedTerms": [
+      "GET",
+      "API",
+      "Endpoint"
+    ],
+    "miniChallenge": "Clasifica “guardar favorito” como GET o POST.",
+    "commonMistake": "Usar POST para consultas simples sin motivo.",
+    "memoryHook": "POST = toma datos y haz algo."
+  },
+  {
+    "id": "json",
+    "term": "JSON",
+    "category": "Full-Stack",
+    "level": "base",
+    "shortDefinition": "Formato simple para guardar e intercambiar datos.",
+    "whatItIs": "Usa claves y valores legibles por humanos y máquinas.",
+    "whatItIsFor": "Sirve para configuración, listas de proyectos, notas y respuestas API.",
+    "whenToUse": "Úsalo cuando necesitas datos estructurados simples.",
+    "realExample": "`projects.json` guarda rutas, comandos y URLs de proyectos.",
+    "professionalPhrase": "“Guardamos la configuración en JSON.”",
+    "relatedTerms": [
+      "API",
+      "settings",
+      "projects.json"
+    ],
+    "miniChallenge": "Abre un archivo `.json` y localiza claves y valores.",
+    "commonMistake": "Olvidar comas o comillas y romper el JSON.",
+    "memoryHook": "JSON = tabla flexible de datos."
+  },
+  {
+    "id": "database",
+    "term": "Base de datos",
+    "category": "Bases de datos",
+    "level": "base",
+    "shortDefinition": "Sistema para guardar datos de forma persistente y consultable.",
+    "whatItIs": "Permite almacenar usuarios, productos, historial, notas o configuraciones.",
+    "whatItIsFor": "Sirve cuando JSON local se queda corto o necesitas datos online.",
+    "whenToUse": "Úsala si varios usuarios, login o historial real entran en juego.",
+    "realExample": "MiApp usa base de datos para perfiles e historial.",
+    "professionalPhrase": "“Esto ya pide base de datos, no solo JSON.”",
+    "relatedTerms": [
+      "Supabase",
+      "SQL",
+      "Backend"
+    ],
+    "miniChallenge": "Piensa qué datos de MiApp deben persistir.",
+    "commonMistake": "Usar base de datos cuando un JSON simple bastaba.",
+    "memoryHook": "Base de datos = memoria organizada."
+  },
+  {
+    "id": "supabase",
+    "term": "Supabase",
+    "category": "Bases de datos",
+    "level": "base",
+    "shortDefinition": "Plataforma con base de datos, autenticación y storage.",
+    "whatItIs": "Ofrece Postgres, Auth, Storage y APIs listas para apps modernas.",
+    "whatItIsFor": "Sirve para login, perfiles, datos de usuarios y archivos.",
+    "whenToUse": "Úsalo cuando tu app necesita backend online rápido.",
+    "realExample": "MiApp puede usar Supabase para perfiles familiares e historial.",
+    "professionalPhrase": "“Supabase cubre auth, base de datos y storage.”",
+    "relatedTerms": [
+      "Postgres",
+      "Auth",
+      "Storage"
+    ],
+    "miniChallenge": "Identifica si un proyecto necesita login o datos por usuario.",
+    "commonMistake": "Meter Supabase en una app local simple que no lo necesita.",
+    "memoryHook": "Supabase = backend listo para apps."
+  },
+  {
+    "id": "postgres",
+    "term": "Postgres",
+    "category": "Bases de datos",
+    "level": "intermedio",
+    "shortDefinition": "Base de datos SQL robusta usada por Supabase.",
+    "whatItIs": "Es un motor relacional para guardar datos estructurados en tablas.",
+    "whatItIsFor": "Sirve para proyectos serios con relaciones, usuarios e historial.",
+    "whenToUse": "Úsalo cuando necesitas datos consistentes y consultas potentes.",
+    "realExample": "Supabase se apoya en Postgres por debajo.",
+    "professionalPhrase": "“La base está en Postgres vía Supabase.”",
+    "relatedTerms": [
+      "SQL",
+      "Supabase",
+      "Tabla"
+    ],
+    "miniChallenge": "Imagina una tabla `profiles` con columnas básicas.",
+    "commonMistake": "Pensar que Supabase es una base inventada; usa Postgres.",
+    "memoryHook": "Postgres = base SQL profesional."
+  },
+  {
+    "id": "auth",
+    "term": "Auth",
+    "category": "Bases de datos",
+    "level": "base",
+    "shortDefinition": "Sistema de autenticación de usuarios.",
+    "whatItIs": "Gestiona registro, login, sesiones y permisos.",
+    "whatItIsFor": "Sirve para saber quién entra y qué puede ver.",
+    "whenToUse": "Úsalo en apps con cuentas de usuario.",
+    "realExample": "MiApp Premium necesita Auth para familias y perfiles.",
+    "professionalPhrase": "“Aquí necesitamos Auth.”",
+    "relatedTerms": [
+      "Supabase",
+      "JWT",
+      "Login"
+    ],
+    "miniChallenge": "Piensa si Jota Dev Center local necesita Auth.",
+    "commonMistake": "Añadir login a una herramienta local personal sin necesidad.",
+    "memoryHook": "Auth = quién eres y qué puedes hacer."
+  },
+  {
+    "id": "storage",
+    "term": "Storage",
+    "category": "Bases de datos",
+    "level": "base",
+    "shortDefinition": "Almacenamiento de archivos.",
+    "whatItIs": "Permite guardar imágenes, PDFs, audios o documentos.",
+    "whatItIsFor": "Sirve cuando una app necesita subir y servir archivos.",
+    "whenToUse": "Úsalo para assets, documentos de usuario o media.",
+    "realExample": "Stories puede guardar audios MP3 o imágenes en storage/CDN.",
+    "professionalPhrase": "“Los archivos van a storage, no a la base como texto.”",
+    "relatedTerms": [
+      "Supabase",
+      "Bunny",
+      "CDN"
+    ],
+    "miniChallenge": "Piensa qué archivos de un proyecto no deberían ir en Git.",
+    "commonMistake": "Guardar archivos pesados dentro de la base de datos sin motivo.",
+    "memoryHook": "Storage = trastero de archivos."
+  },
+  {
+    "id": "git",
+    "term": "Git",
+    "category": "Git",
+    "level": "base",
+    "shortDefinition": "Sistema de control de versiones.",
+    "whatItIs": "Registra cambios del código y permite volver atrás.",
+    "whatItIsFor": "Sirve para trabajar seguro, comparar cambios y preparar despliegues.",
+    "whenToUse": "Úsalo en todo proyecto serio.",
+    "realExample": "Antes de pedir a Claude grandes cambios, mira `git status`.",
+    "professionalPhrase": "“Primero revisa estado Git.”",
+    "relatedTerms": [
+      "GitHub",
+      "commit",
+      "branch"
+    ],
+    "miniChallenge": "Ejecuta `git status` en un repo.",
+    "commonMistake": "Usar Git solo como trámite para subir a GitHub. Es seguro de vida.",
+    "memoryHook": "Git = historial del proyecto."
+  },
+  {
+    "id": "github",
+    "term": "GitHub",
+    "category": "Git",
+    "level": "base",
+    "shortDefinition": "Plataforma online para alojar repositorios Git.",
+    "whatItIs": "Guarda código en la nube y conecta con despliegues y colaboración.",
+    "whatItIsFor": "Sirve para backup, historial, ramas y despliegue a Vercel.",
+    "whenToUse": "Úsalo como repositorio central.",
+    "realExample": "Tu flujo normal: Claude modifica, GitHub guarda, Vercel despliega.",
+    "professionalPhrase": "“Subimos a GitHub y Vercel despliega.”",
+    "relatedTerms": [
+      "Git",
+      "Vercel",
+      "Repository"
+    ],
+    "miniChallenge": "Abre un repo y localiza commits, branches y README.",
+    "commonMistake": "Confundir Git con GitHub. Git es la herramienta; GitHub es la plataforma.",
+    "memoryHook": "GitHub = nube de tus repos."
+  },
+  {
+    "id": "commit",
+    "term": "Commit",
+    "category": "Git",
+    "level": "base",
+    "shortDefinition": "Punto guardado en la historia del código.",
+    "whatItIs": "Es una foto de cambios con un mensaje descriptivo.",
+    "whatItIsFor": "Sirve para guardar avances y poder volver atrás.",
+    "whenToUse": "Haz commit cuando un cambio funciona o una fase queda cerrada.",
+    "realExample": "`git commit -m \"Corrige panel de proyectos\"`.",
+    "professionalPhrase": "“Haz un commit limpio antes de seguir.”",
+    "relatedTerms": [
+      "git add",
+      "Git",
+      "push"
+    ],
+    "miniChallenge": "Escribe un buen mensaje de commit para “añadir buscador”.",
+    "commonMistake": "Hacer commits gigantes con mensajes vagos como “cosas”.",
+    "memoryHook": "Commit = punto de guardado."
+  },
+  {
+    "id": "git-add",
+    "term": "git add",
+    "category": "Git",
+    "level": "base",
+    "shortDefinition": "Comando para preparar cambios antes del commit.",
+    "whatItIs": "Marca archivos modificados para incluirlos en el próximo commit.",
+    "whatItIsFor": "Sirve para decidir qué entra en el punto guardado.",
+    "whenToUse": "Úsalo antes de `git commit`.",
+    "realExample": "`git add .` prepara todos los cambios actuales.",
+    "professionalPhrase": "“Añade cambios al staging.”",
+    "relatedTerms": [
+      "commit",
+      "staging",
+      "Git"
+    ],
+    "miniChallenge": "Ejecuta `git status` antes y después de `git add .`.",
+    "commonMistake": "Creer que `git add` sube a GitHub. Solo prepara localmente.",
+    "memoryHook": "git add = meter en la caja del commit."
+  },
+  {
+    "id": "push",
+    "term": "git push",
+    "category": "Git",
+    "level": "base",
+    "shortDefinition": "Comando para subir commits a GitHub.",
+    "whatItIs": "Envía tus cambios locales al repositorio remoto.",
+    "whatItIsFor": "Sirve para backup y para disparar despliegues en Vercel.",
+    "whenToUse": "Úsalo después de commit cuando quieras publicar cambios.",
+    "realExample": "`git push` puede iniciar un deploy automático en Vercel.",
+    "professionalPhrase": "“Haz push para que Vercel despliegue.”",
+    "relatedTerms": [
+      "commit",
+      "GitHub",
+      "Vercel"
+    ],
+    "miniChallenge": "Haz el mapa: add → commit → push.",
+    "commonMistake": "Hacer push sin pasar build antes.",
+    "memoryHook": "Push = enviar a la nube."
+  },
+  {
+    "id": "pull",
+    "term": "git pull",
+    "category": "Git",
+    "level": "base",
+    "shortDefinition": "Comando para traer cambios desde GitHub.",
+    "whatItIs": "Actualiza tu copia local con lo que hay en remoto.",
+    "whatItIsFor": "Sirve para sincronizar antes de trabajar.",
+    "whenToUse": "Úsalo si trabajaste desde otro equipo o agente.",
+    "realExample": "Antes de tocar un proyecto, puedes hacer `git pull`.",
+    "professionalPhrase": "“Haz pull antes de modificar.”",
+    "relatedTerms": [
+      "GitHub",
+      "branch",
+      "merge"
+    ],
+    "miniChallenge": "Ejecuta `git pull` en un repo y observa si estaba actualizado.",
+    "commonMistake": "Hacer cambios locales sin traer la última versión.",
+    "memoryHook": "Pull = bajar novedades."
+  },
+  {
+    "id": "branch",
+    "term": "Branch",
+    "category": "Git",
+    "level": "intermedio",
+    "shortDefinition": "Rama de trabajo dentro de Git.",
+    "whatItIs": "Permite desarrollar cambios separados sin tocar la línea principal.",
+    "whatItIsFor": "Sirve para probar funciones, arreglos o versiones.",
+    "whenToUse": "Úsala cuando una modificación puede romper algo.",
+    "realExample": "Una rama `feature/dev-center-ui` para rediseñar el panel.",
+    "professionalPhrase": "“Crea una rama para ese cambio.”",
+    "relatedTerms": [
+      "main",
+      "merge",
+      "Git"
+    ],
+    "miniChallenge": "Ejecuta `git branch` para ver la rama actual.",
+    "commonMistake": "Trabajar siempre en main incluso con cambios arriesgados.",
+    "memoryHook": "Branch = camino paralelo."
+  },
+  {
+    "id": "repository",
+    "term": "Repositorio",
+    "category": "Git",
+    "level": "base",
+    "shortDefinition": "Carpeta/proyecto controlado por Git.",
+    "whatItIs": "Es el conjunto de archivos, historial y configuración Git.",
+    "whatItIsFor": "Sirve como unidad principal de trabajo y despliegue.",
+    "whenToUse": "Úsalo para cada app, plugin o herramienta.",
+    "realExample": "`jota-dev-center` será un repositorio.",
+    "professionalPhrase": "“Abre el repositorio del proyecto.”",
+    "relatedTerms": [
+      "Git",
+      "GitHub",
+      ".git"
+    ],
+    "miniChallenge": "Busca si una carpeta tiene subcarpeta `.git`.",
+    "commonMistake": "Llamar repo a cualquier carpeta aunque no tenga Git.",
+    "memoryHook": "Repo = proyecto con memoria Git."
+  },
+  {
+    "id": "gitignore",
+    "term": ".gitignore",
+    "category": "Git",
+    "level": "base",
+    "shortDefinition": "Archivo que indica qué no debe guardar Git.",
+    "whatItIs": "Lista carpetas y archivos excluidos del control de versiones.",
+    "whatItIsFor": "Sirve para evitar subir node_modules, builds, secretos o basura.",
+    "whenToUse": "Úsalo en todo repo.",
+    "realExample": "`node_modules`, `.env`, `dist` y `.next` suelen ignorarse.",
+    "professionalPhrase": "“Añade eso al .gitignore.”",
+    "relatedTerms": [
+      "Git",
+      "node_modules",
+      ".env"
+    ],
+    "miniChallenge": "Abre un `.gitignore` y revisa si incluye `.env`.",
+    "commonMistake": "Subir claves privadas o carpetas pesadas al repo.",
+    "memoryHook": ".gitignore = lista de no subir."
+  },
+  {
+    "id": "vercel",
+    "term": "Vercel",
+    "category": "Deploy",
+    "level": "base",
+    "shortDefinition": "Plataforma para desplegar apps web desde GitHub.",
+    "whatItIs": "Construye y publica proyectos frontend/full-stack automáticamente.",
+    "whatItIsFor": "Sirve para llevar React, Vite o Next a producción.",
+    "whenToUse": "Úsalo como despliegue principal de tus apps web.",
+    "realExample": "Tu flujo: push a GitHub → deploy en Vercel.",
+    "professionalPhrase": "“El deploy lo gestiona Vercel.”",
+    "relatedTerms": [
+      "GitHub",
+      "deploy",
+      "build"
+    ],
+    "miniChallenge": "Abre un proyecto en Vercel y localiza build command.",
+    "commonMistake": "Pensar que Vercel arregla errores de build. Solo los muestra.",
+    "memoryHook": "Vercel = publicar desde GitHub."
+  },
+  {
+    "id": "deploy",
+    "term": "Deploy",
+    "category": "Deploy",
+    "level": "base",
+    "shortDefinition": "Proceso de publicar una app para que sea accesible.",
+    "whatItIs": "Convierte código en una versión online o productiva.",
+    "whatItIsFor": "Sirve para pasar de local a público.",
+    "whenToUse": "Haz deploy cuando el build funciona y los cambios están subidos.",
+    "realExample": "Vercel hace deploy tras un `git push`.",
+    "professionalPhrase": "“Vamos a desplegar esta versión.”",
+    "relatedTerms": [
+      "Vercel",
+      "production",
+      "preview"
+    ],
+    "miniChallenge": "Diferencia local, preview y producción.",
+    "commonMistake": "Desplegar sin probar build local.",
+    "memoryHook": "Deploy = sacar del taller al escaparate."
+  },
+  {
+    "id": "production",
+    "term": "Producción",
+    "category": "Deploy",
+    "level": "base",
+    "shortDefinition": "Versión real que usa el público o cliente.",
+    "whatItIs": "Es el entorno final, no pruebas ni desarrollo.",
+    "whatItIsFor": "Sirve para entregar una app funcionando.",
+    "whenToUse": "Cuídalo más que localhost o preview.",
+    "realExample": "`https://app.ejemplo.com` puede ser producción.",
+    "professionalPhrase": "“No toquemos producción sin revisar.”",
+    "relatedTerms": [
+      "Deploy",
+      "Preview",
+      "Vercel"
+    ],
+    "miniChallenge": "Identifica cuál URL de un proyecto es producción.",
+    "commonMistake": "Probar cosas directamente en producción.",
+    "memoryHook": "Producción = la app de verdad."
+  },
+  {
+    "id": "preview",
+    "term": "Preview",
+    "category": "Deploy",
+    "level": "base",
+    "shortDefinition": "Versión temporal para revisar cambios antes de producción.",
+    "whatItIs": "Es un despliegue de prueba asociado a una rama o pull request.",
+    "whatItIsFor": "Sirve para validar cambios sin afectar la web principal.",
+    "whenToUse": "Úsalo para revisar con clientes o comparar versiones.",
+    "realExample": "Vercel genera previews por cambios de GitHub.",
+    "professionalPhrase": "“Pásame la URL de preview.”",
+    "relatedTerms": [
+      "Vercel",
+      "Deploy",
+      "Production"
+    ],
+    "miniChallenge": "Piensa cuándo usarías preview en vez de producción.",
+    "commonMistake": "Mandar una preview como si fuera la URL final.",
+    "memoryHook": "Preview = ensayo publicado."
+  },
+  {
+    "id": "env-vars",
+    "term": "Environment variables",
+    "category": "Deploy",
+    "level": "base",
+    "shortDefinition": "Configuraciones externas para local o producción.",
+    "whatItIs": "Son valores como claves, URLs y modos que no deben estar hardcodeados.",
+    "whatItIsFor": "Sirven para conectar con Supabase, OpenAI, Stripe o APIs.",
+    "whenToUse": "Úsalas para datos sensibles o diferentes por entorno.",
+    "realExample": "Vercel guarda variables de entorno para producción.",
+    "professionalPhrase": "“Falta configurar las env vars en Vercel.”",
+    "relatedTerms": [
+      "Variable de entorno",
+      ".env",
+      "Vercel"
+    ],
+    "miniChallenge": "Busca en Vercel la sección Environment Variables.",
+    "commonMistake": "Subir `.env` a GitHub.",
+    "memoryHook": "Env vars = interruptores secretos del proyecto."
+  },
+  {
+    "id": "render",
+    "term": "Render",
+    "category": "Deploy",
+    "level": "base",
+    "shortDefinition": "Plataforma para desplegar backends y servicios persistentes.",
+    "whatItIs": "Permite publicar APIs, workers y servidores que necesitan estar online.",
+    "whatItIsFor": "Sirve cuando Vercel no encaja para procesos persistentes.",
+    "whenToUse": "Úsalo si necesitas backend con proceso largo o servidor dedicado.",
+    "realExample": "Una API Node persistente podría ir en Render.",
+    "professionalPhrase": "“Esto quizá va mejor en Render que en Vercel.”",
+    "relatedTerms": [
+      "Backend",
+      "Deploy",
+      "API"
+    ],
+    "miniChallenge": "Piensa si un backend debe estar siempre vivo.",
+    "commonMistake": "Meter cualquier backend en Vercel sin revisar límites.",
+    "memoryHook": "Render = servidor backend fácil."
+  },
+  {
+    "id": "netlify",
+    "term": "Netlify",
+    "category": "Deploy",
+    "level": "base",
+    "shortDefinition": "Alternativa a Vercel para publicar frontends y sitios.",
+    "whatItIs": "Permite desplegar webs, funciones y sitios estáticos.",
+    "whatItIsFor": "Sirve para landings, apps frontend y algunas funciones serverless.",
+    "whenToUse": "Úsalo si un proyecto ya está en Netlify o encaja mejor ahí.",
+    "realExample": "Algunos proyectos pueden vivir en Netlify en vez de Vercel.",
+    "professionalPhrase": "“Este deploy está en Netlify.”",
+    "relatedTerms": [
+      "Vercel",
+      "Deploy",
+      "Frontend"
+    ],
+    "miniChallenge": "Compara: ¿este proyecto usa Vercel o Netlify?",
+    "commonMistake": "Usar varias plataformas sin documentarlo.",
+    "memoryHook": "Netlify = otra autopista de deploy frontend."
+  },
+  {
+    "id": "claude-code",
+    "term": "Claude Code",
+    "category": "IA Coding",
+    "level": "base",
+    "shortDefinition": "Agente de IA para trabajar sobre proyectos desde terminal.",
+    "whatItIs": "Lee el codebase, edita archivos y puede ejecutar comandos dentro del proyecto.",
+    "whatItIsFor": "Sirve para construir funciones, refactorizar, corregir bugs y revisar proyectos completos.",
+    "whenToUse": "Úsalo como IA principal para cambios grandes y contexto amplio.",
+    "realExample": "Tu flujo base abre Claude desde PowerShell en la carpeta del proyecto.",
+    "professionalPhrase": "“Abro Claude Code en la raíz del repo.”",
+    "relatedTerms": [
+      "Codex",
+      "PowerShell",
+      "codebase"
+    ],
+    "miniChallenge": "Abre un proyecto y piensa qué prompt darías a Claude.",
+    "commonMistake": "Pedir cambios vagos sin contexto ni objetivo final.",
+    "memoryHook": "Claude Code = compañero principal de obra."
+  },
+  {
+    "id": "codex",
+    "term": "Codex",
+    "category": "IA Coding",
+    "level": "base",
+    "shortDefinition": "Agente de IA de OpenAI para editar y ejecutar código localmente.",
+    "whatItIs": "Trabaja sobre el directorio seleccionado y puede ayudar con tareas concretas de desarrollo.",
+    "whatItIsFor": "Sirve para resolver bugs, comparar enfoques y ejecutar cambios puntuales.",
+    "whenToUse": "Úsalo como segunda opinión o para tareas rápidas.",
+    "realExample": "Puedes abrir Codex después de Claude para revisar build o bugs.",
+    "professionalPhrase": "“Lo reviso con Codex como segunda pasada.”",
+    "relatedTerms": [
+      "Claude Code",
+      "CLI",
+      "codebase"
+    ],
+    "miniChallenge": "Pide a Codex revisar un error concreto de build.",
+    "commonMistake": "Usar dos IA a la vez cambiando archivos sin control Git.",
+    "memoryHook": "Codex = segundo técnico rápido."
+  },
+  {
+    "id": "prompt-tecnico",
+    "term": "Prompt técnico",
+    "category": "IA Coding",
+    "level": "base",
+    "shortDefinition": "Instrucción clara para que una IA haga trabajo de desarrollo.",
+    "whatItIs": "Describe objetivo, contexto, límites, stack y entregable.",
+    "whatItIsFor": "Sirve para evitar respuestas vagas o cambios peligrosos.",
+    "whenToUse": "Úsalo siempre que pidas a Claude o Codex tocar código.",
+    "realExample": "Prompt para Jota Dev Center con stack, rutas y funciones obligatorias.",
+    "professionalPhrase": "“Voy a darle un prompt técnico cerrado.”",
+    "relatedTerms": [
+      "Claude Code",
+      "Codex",
+      "Contexto"
+    ],
+    "miniChallenge": "Reescribe “hazlo bonito” como prompt técnico con 3 requisitos.",
+    "commonMistake": "Pedir “arréglalo” sin explicar qué es correcto.",
+    "memoryHook": "Prompt técnico = plano de obra para la IA."
+  },
+  {
+    "id": "codebase",
+    "term": "Codebase",
+    "category": "IA Coding",
+    "level": "base",
+    "shortDefinition": "Conjunto completo de código de un proyecto.",
+    "whatItIs": "Incluye archivos, estructura, dependencias, configuración e historial.",
+    "whatItIsFor": "Sirve para hablar del proyecto como sistema completo.",
+    "whenToUse": "Úsalo cuando una IA necesita entender todo antes de tocar.",
+    "realExample": "Claude revisa el codebase de TimeGuard antes de modificar menús.",
+    "professionalPhrase": "“Primero analiza el codebase.”",
+    "relatedTerms": [
+      "Repositorio",
+      "Claude Code",
+      "Arquitectura"
+    ],
+    "miniChallenge": "Mira carpetas principales de un proyecto y describe el codebase.",
+    "commonMistake": "Pensar que un archivo suelto explica toda la app.",
+    "memoryHook": "Codebase = todo el cuerpo del proyecto."
+  },
+  {
+    "id": "refactor",
+    "term": "Refactor",
+    "category": "IA Coding",
+    "level": "intermedio",
+    "shortDefinition": "Mejorar estructura interna sin cambiar comportamiento esperado.",
+    "whatItIs": "Reorganiza código para hacerlo más claro, mantenible o seguro.",
+    "whatItIsFor": "Sirve para limpiar caos, duplicados o funciones enormes.",
+    "whenToUse": "Úsalo cuando algo funciona pero está difícil de mantener.",
+    "realExample": "Separar servicios `git.ts`, `zip.ts` y `commands.ts` en Jota Dev Center.",
+    "professionalPhrase": "“Hay que refactorizar sin cambiar funcionalidad.”",
+    "relatedTerms": [
+      "Codebase",
+      "Arquitectura",
+      "Bug"
+    ],
+    "miniChallenge": "Identifica una función demasiado larga que pedirías refactorizar.",
+    "commonMistake": "Refactorizar y romper funciones porque no había pruebas o build.",
+    "memoryHook": "Refactor = ordenar la trastienda."
+  },
+  {
+    "id": "debug",
+    "term": "Debug",
+    "category": "IA Coding",
+    "level": "base",
+    "shortDefinition": "Proceso de encontrar y corregir errores.",
+    "whatItIs": "Consiste en reproducir, aislar causa y aplicar corrección.",
+    "whatItIsFor": "Sirve cuando algo no funciona como debería.",
+    "whenToUse": "Úsalo con errores de consola, build, UI o backend.",
+    "realExample": "Claude puede debuggear por qué `npm run dev` falla.",
+    "professionalPhrase": "“Vamos a depurar el error paso a paso.”",
+    "relatedTerms": [
+      "Bug",
+      "Build error",
+      "Logs"
+    ],
+    "miniChallenge": "Copia un error y localiza archivo, línea y mensaje.",
+    "commonMistake": "Cambiar cosas al azar sin entender el error.",
+    "memoryHook": "Debug = cazar la causa real."
+  },
+  {
+    "id": "bug",
+    "term": "Bug",
+    "category": "IA Coding",
+    "level": "base",
+    "shortDefinition": "Error o comportamiento incorrecto del software.",
+    "whatItIs": "Puede ser visual, lógico, técnico o de integración.",
+    "whatItIsFor": "Sirve para nombrar fallos concretos que deben corregirse.",
+    "whenToUse": "Úsalo cuando algo no hace lo esperado.",
+    "realExample": "Botón “Crear ZIP” no excluye `node_modules`: bug.",
+    "professionalPhrase": "“Hay un bug en la generación de ZIP.”",
+    "relatedTerms": [
+      "Debug",
+      "Issue",
+      "Fix"
+    ],
+    "miniChallenge": "Describe un bug con: esperado, actual y pasos.",
+    "commonMistake": "Decir “no funciona” sin pasos para reproducir.",
+    "memoryHook": "Bug = algo prometido que falla."
+  },
+  {
+    "id": "build-error",
+    "term": "Build error",
+    "category": "IA Coding",
+    "level": "base",
+    "shortDefinition": "Error al crear la versión final del proyecto.",
+    "whatItIs": "Aparece durante `npm run build` o despliegue.",
+    "whatItIsFor": "Sirve para detectar problemas que quizá no salen en dev.",
+    "whenToUse": "Revísalo antes de subir a Vercel.",
+    "realExample": "Un import mal escrito puede romper build aunque la UI parecía cargar.",
+    "professionalPhrase": "“Esto no es visual, es un error de build.”",
+    "relatedTerms": [
+      "npm run build",
+      "Vercel",
+      "TypeScript"
+    ],
+    "miniChallenge": "Ejecuta build y observa si el error menciona archivo y línea.",
+    "commonMistake": "Ignorar build local y descubrir el error en Vercel.",
+    "memoryHook": "Build error = examen suspendido."
+  },
+  {
+    "id": "logs",
+    "term": "Logs",
+    "category": "IA Coding",
+    "level": "base",
+    "shortDefinition": "Mensajes que muestran qué está pasando dentro de una app.",
+    "whatItIs": "Pueden aparecer en terminal, navegador, servidor o plataforma de deploy.",
+    "whatItIsFor": "Sirven para diagnosticar errores y entender flujo.",
+    "whenToUse": "Úsalos cuando algo falla pero no ves por qué.",
+    "realExample": "Vercel muestra logs de build y runtime.",
+    "professionalPhrase": "“Pásame los logs del error.”",
+    "relatedTerms": [
+      "Debug",
+      "Terminal",
+      "Vercel"
+    ],
+    "miniChallenge": "Busca en un error las palabras clave: file, line, error.",
+    "commonMistake": "Mandar capturas sin logs completos cuando hay error técnico.",
+    "memoryHook": "Logs = pistas del sistema."
+  },
+  {
+    "id": "review",
+    "term": "Code review",
+    "category": "IA Coding",
+    "level": "intermedio",
+    "shortDefinition": "Revisión del código para detectar errores, riesgos o mejoras.",
+    "whatItIs": "Analiza cambios antes de darlos por buenos.",
+    "whatItIsFor": "Sirve para evitar bugs, malas prácticas y regresiones.",
+    "whenToUse": "Úsalo antes de hacer push en cambios grandes.",
+    "realExample": "Pedir a Codex revisar lo que modificó Claude.",
+    "professionalPhrase": "“Haz una revisión de cambios antes del commit.”",
+    "relatedTerms": [
+      "Git diff",
+      "Codex",
+      "Claude Code"
+    ],
+    "miniChallenge": "Ejecuta `git diff` y revisa qué cambió.",
+    "commonMistake": "Confiar en que la IA siempre acertó.",
+    "memoryHook": "Review = segunda mirada antes de enviar."
+  },
+  {
+    "id": "git-diff",
+    "term": "git diff",
+    "category": "Git",
+    "level": "base",
+    "shortDefinition": "Comando para ver diferencias no guardadas en Git.",
+    "whatItIs": "Muestra líneas añadidas, eliminadas o modificadas.",
+    "whatItIsFor": "Sirve para revisar lo que cambió antes del commit.",
+    "whenToUse": "Úsalo después de que Claude/Codex modifique archivos.",
+    "realExample": "`git diff` te muestra si la IA tocó más de la cuenta.",
+    "professionalPhrase": "“Revisa el diff antes de commit.”",
+    "relatedTerms": [
+      "Git",
+      "Code review",
+      "commit"
+    ],
+    "miniChallenge": "Ejecuta `git diff` tras cambiar un archivo.",
+    "commonMistake": "Hacer commit sin revisar qué cambió.",
+    "memoryHook": "git diff = lupa de cambios."
+  },
+  {
+    "id": "automation",
+    "term": "Automatización",
+    "category": "Automatización",
+    "level": "base",
+    "shortDefinition": "Convertir tareas repetitivas en procesos ejecutables.",
+    "whatItIs": "Une comandos, scripts, APIs o flujos para reducir trabajo manual.",
+    "whatItIsFor": "Sirve para arrancar proyectos, crear ZIPs, deploys o accesos directos.",
+    "whenToUse": "Úsala cuando repites una tarea varias veces.",
+    "realExample": "Jota Dev Center automatiza abrir Claude, Git, Vercel y ZIPs.",
+    "professionalPhrase": "“Esto se puede automatizar.”",
+    "relatedTerms": [
+      "Script",
+      "PowerShell",
+      "Workflow"
+    ],
+    "miniChallenge": "Piensa una tarea repetida tuya que debería ser botón.",
+    "commonMistake": "Automatizar sin entender primero el proceso manual.",
+    "memoryHook": "Automatización = botón para una rutina."
+  },
+  {
+    "id": "workflow",
+    "term": "Workflow",
+    "category": "Automatización",
+    "level": "base",
+    "shortDefinition": "Secuencia ordenada de pasos de trabajo.",
+    "whatItIs": "Describe cómo pasas de idea a resultado.",
+    "whatItIsFor": "Sirve para convertir hábitos en sistema.",
+    "whenToUse": "Úsalo para documentar tu flujo PowerShell → Claude → GitHub → Vercel.",
+    "realExample": "Tu workflow base termina en deploy automático.",
+    "professionalPhrase": "“Este es mi workflow principal.”",
+    "relatedTerms": [
+      "Automatización",
+      "GitHub",
+      "Vercel"
+    ],
+    "miniChallenge": "Escribe tu workflow de 5 pasos para una app.",
+    "commonMistake": "Cambiar de flujo cada día y perder control.",
+    "memoryHook": "Workflow = camino repetible."
+  },
+  {
+    "id": "child-process",
+    "term": "child_process",
+    "category": "Automatización",
+    "level": "intermedio",
+    "shortDefinition": "Módulo Node para ejecutar comandos del sistema.",
+    "whatItIs": "Permite lanzar procesos como Git, PowerShell o comandos npm desde una app Node.",
+    "whatItIsFor": "Sirve para que una app local pueda abrir herramientas externas.",
+    "whenToUse": "Úsalo en backends locales con mucha precaución.",
+    "realExample": "Jota Dev Center puede usarlo para lanzar `git status`.",
+    "professionalPhrase": "“Esto requiere child_process en Node.”",
+    "relatedTerms": [
+      "Node.js",
+      "spawn",
+      "exec"
+    ],
+    "miniChallenge": "Piensa por qué React solo no puede ejecutar PowerShell.",
+    "commonMistake": "Permitir comandos libres desde UI sin seguridad.",
+    "memoryHook": "child_process = Node pulsando comandos del sistema."
+  },
+  {
+    "id": "spawn",
+    "term": "spawn",
+    "category": "Automatización",
+    "level": "intermedio",
+    "shortDefinition": "Forma de ejecutar procesos desde Node con control de salida.",
+    "whatItIs": "Lanza comandos externos y permite leer su salida progresivamente.",
+    "whatItIsFor": "Sirve para comandos largos o interactivos.",
+    "whenToUse": "Úsalo cuando necesitas abrir o gestionar procesos desde backend local.",
+    "realExample": "Ejecutar `npm run dev` desde un botón puede usar spawn.",
+    "professionalPhrase": "“Usa spawn para procesos largos.”",
+    "relatedTerms": [
+      "child_process",
+      "exec",
+      "Node.js"
+    ],
+    "miniChallenge": "Diferencia mental: comando corto vs proceso largo.",
+    "commonMistake": "Usar exec para procesos enormes que generan mucha salida.",
+    "memoryHook": "spawn = arrancar proceso vivo."
+  },
+  {
+    "id": "exec",
+    "term": "exec",
+    "category": "Automatización",
+    "level": "intermedio",
+    "shortDefinition": "Forma simple de ejecutar un comando y recibir resultado.",
+    "whatItIs": "Ejecuta comandos externos y devuelve salida cuando terminan.",
+    "whatItIsFor": "Sirve para acciones cortas como `git branch --show-current`.",
+    "whenToUse": "Úsalo para comandos breves y controlados.",
+    "realExample": "Consultar rama Git desde Jota Dev Center.",
+    "professionalPhrase": "“Para git status corto puede bastar exec.”",
+    "relatedTerms": [
+      "child_process",
+      "spawn",
+      "Git"
+    ],
+    "miniChallenge": "Piensa qué usarías para `git status`: exec o spawn.",
+    "commonMistake": "Usar exec con comandos no controlados introducidos por el usuario.",
+    "memoryHook": "exec = ejecutar y traer respuesta."
+  },
+  {
+    "id": "electron",
+    "term": "Electron",
+    "category": "Desktop Apps",
+    "level": "intermedio",
+    "shortDefinition": "Tecnología para convertir una app web en app de escritorio.",
+    "whatItIs": "Empaqueta HTML, CSS y JavaScript en una ventana de escritorio usando Chromium y Node.",
+    "whatItIsFor": "Sirve para crear apps `.exe` multiplataforma con tecnologías web.",
+    "whenToUse": "Úsalo cuando el panel local ya funciona y quieres app instalable.",
+    "realExample": "Jota Dev Center puede pasar a Electron después de funcionar como web local.",
+    "professionalPhrase": "“Primero web local, luego Electron.”",
+    "relatedTerms": [
+      "Desktop app",
+      "React",
+      "Node.js"
+    ],
+    "miniChallenge": "Explica por qué no meter Electron desde el minuto uno.",
+    "commonMistake": "Empezar con Electron antes de validar la app y liarse con permisos/builds.",
+    "memoryHook": "Electron = navegador convertido en programa."
+  },
+  {
+    "id": "desktop-app",
+    "term": "App de escritorio",
+    "category": "Desktop Apps",
+    "level": "base",
+    "shortDefinition": "Programa instalado o abierto como ventana en el sistema.",
+    "whatItIs": "No depende de una pestaña normal del navegador, aunque puede usar tecnología web por dentro.",
+    "whatItIsFor": "Sirve para herramientas locales de uso frecuente.",
+    "whenToUse": "Úsala si quieres acceso directo, ventana propia e integración con sistema.",
+    "realExample": "Jota Dev Center podría ser escritorio en fase 3.",
+    "professionalPhrase": "“Luego lo empaquetamos como app de escritorio.”",
+    "relatedTerms": [
+      "Electron",
+      ".exe",
+      "Shortcut"
+    ],
+    "miniChallenge": "Piensa qué aporta escritorio frente a localhost.",
+    "commonMistake": "Crear app de escritorio cuando un acceso directo local bastaba.",
+    "memoryHook": "Desktop app = herramienta con ventana propia."
+  },
+  {
+    "id": "shortcut",
+    "term": "Acceso directo",
+    "category": "Entorno",
+    "level": "base",
+    "shortDefinition": "Enlace del escritorio para abrir una app o script.",
+    "whatItIs": "Apunta a un archivo, comando o programa.",
+    "whatItIsFor": "Sirve para abrir herramientas sin navegar carpetas.",
+    "whenToUse": "Úsalo para Jota Dev Center o Jota Dev Lexicon.",
+    "realExample": "Un `.lnk` en escritorio puede abrir tu app local.",
+    "professionalPhrase": "“Crea un acceso directo en el escritorio.”",
+    "relatedTerms": [
+      "Script",
+      "PowerShell",
+      "Windows"
+    ],
+    "miniChallenge": "Crea mentalmente acceso a un `.bat` que abre una app.",
+    "commonMistake": "Confundir acceso directo con copiar la app completa.",
+    "memoryHook": "Acceso directo = puerta rápida."
+  },
+  {
+    "id": "bat",
+    "term": "Archivo .bat",
+    "category": "Automatización",
+    "level": "base",
+    "shortDefinition": "Script clásico de Windows para ejecutar comandos.",
+    "whatItIs": "Es un archivo por lotes que lanza órdenes en Windows.",
+    "whatItIsFor": "Sirve para abrir apps, scripts o comandos con doble clic.",
+    "whenToUse": "Úsalo para accesos simples desde escritorio.",
+    "realExample": "`start-jota-dev-lexicon.bat` abre el ebook interactivo.",
+    "professionalPhrase": "“Lo abrimos con un .bat sencillo.”",
+    "relatedTerms": [
+      "PowerShell",
+      "Script",
+      "Shortcut"
+    ],
+    "miniChallenge": "Abre un `.bat` con Notepad++ y lee sus comandos.",
+    "commonMistake": "Meter lógica compleja en .bat cuando conviene PowerShell.",
+    "memoryHook": ".bat = doble clic para comandos simples."
+  },
+  {
+    "id": "ps1",
+    "term": "Archivo .ps1",
+    "category": "Automatización",
+    "level": "base",
+    "shortDefinition": "Script de PowerShell.",
+    "whatItIs": "Contiene comandos PowerShell guardados para ejecutar tareas.",
+    "whatItIsFor": "Sirve para automatizaciones más potentes que un .bat.",
+    "whenToUse": "Úsalo para crear accesos directos, configurar perfiles o tareas.",
+    "realExample": "`create-desktop-shortcut.ps1` crea un icono en escritorio.",
+    "professionalPhrase": "“Eso lo hacemos con un script .ps1.”",
+    "relatedTerms": [
+      "PowerShell",
+      "Script",
+      "ExecutionPolicy"
+    ],
+    "miniChallenge": "Localiza un `.ps1` y mira qué automatiza.",
+    "commonMistake": "Ejecutar un .ps1 de origen dudoso sin revisar.",
+    "memoryHook": ".ps1 = receta PowerShell."
+  },
+  {
+    "id": "wordpress",
+    "term": "WordPress",
+    "category": "WordPress",
+    "level": "base",
+    "shortDefinition": "CMS para crear y gestionar webs con plugins y temas.",
+    "whatItIs": "Permite montar webs administrables sin programar todo desde cero.",
+    "whatItIsFor": "Sirve para sitios, landings, e-commerce y plugins propios.",
+    "whenToUse": "Úsalo cuando el cliente necesita administración web rápida.",
+    "realExample": "TimeGuard Pro es plugin para WordPress.",
+    "professionalPhrase": "“Esto va como plugin de WordPress.”",
+    "relatedTerms": [
+      "Plugin",
+      "PHP",
+      "WooCommerce"
+    ],
+    "miniChallenge": "Identifica si un proyecto es app web o plugin WordPress.",
+    "commonMistake": "Tratar WordPress como si fuera React/Vite. Es otro ecosistema.",
+    "memoryHook": "WordPress = web administrable con ecosistema propio."
+  },
+  {
+    "id": "plugin-wordpress",
+    "term": "Plugin WordPress",
+    "category": "WordPress",
+    "level": "base",
+    "shortDefinition": "Extensión que añade funciones a WordPress.",
+    "whatItIs": "Es un paquete PHP/JS/CSS instalable desde el panel de WP.",
+    "whatItIsFor": "Sirve para crear herramientas, integraciones o funcionalidades nuevas.",
+    "whenToUse": "Úsalo cuando la función debe vivir dentro de WordPress.",
+    "realExample": "TimeGuard Pro controla packs de horas dentro de WP.",
+    "professionalPhrase": "“Entrega el ZIP instalable del plugin.”",
+    "relatedTerms": [
+      "WordPress",
+      "PHP",
+      "ZIP"
+    ],
+    "miniChallenge": "Abre un ZIP de plugin y busca el archivo principal `.php`.",
+    "commonMistake": "Entregar archivos sueltos en vez de ZIP instalable.",
+    "memoryHook": "Plugin = módulo que se instala en WP."
+  },
+  {
+    "id": "php",
+    "term": "PHP",
+    "category": "WordPress",
+    "level": "base",
+    "shortDefinition": "Lenguaje principal de WordPress.",
+    "whatItIs": "Se ejecuta en servidor y genera lógica de plugins, temas y backend WP.",
+    "whatItIsFor": "Sirve para hooks, menús admin, shortcodes y funciones de WP.",
+    "whenToUse": "Úsalo en plugins y temas WordPress.",
+    "realExample": "TimeGuard Pro está basado principalmente en PHP.",
+    "professionalPhrase": "“La lógica del plugin va en PHP.”",
+    "relatedTerms": [
+      "WordPress",
+      "Hook",
+      "Shortcode"
+    ],
+    "miniChallenge": "Busca `add_action` en un plugin.",
+    "commonMistake": "Intentar resolver todo con JavaScript cuando el problema está en PHP/WP.",
+    "memoryHook": "PHP = motor tradicional de WordPress."
+  },
+  {
+    "id": "hook",
+    "term": "Hook WordPress",
+    "category": "WordPress",
+    "level": "intermedio",
+    "shortDefinition": "Punto de enganche para ejecutar código en WordPress.",
+    "whatItIs": "Permite añadir o modificar comportamiento sin tocar el core.",
+    "whatItIsFor": "Sirve para menús, scripts, acciones, filtros y procesos internos.",
+    "whenToUse": "Úsalo cuando un plugin debe integrarse con WordPress.",
+    "realExample": "`admin_menu` permite añadir páginas al panel WP.",
+    "professionalPhrase": "“Esto va enganchado a un hook.”",
+    "relatedTerms": [
+      "PHP",
+      "WordPress",
+      "add_action"
+    ],
+    "miniChallenge": "Busca `add_action` o `add_filter` en un plugin.",
+    "commonMistake": "Modificar core de WordPress en vez de usar hooks.",
+    "memoryHook": "Hook = gancho donde se cuelga tu función."
+  },
+  {
+    "id": "shortcode",
+    "term": "Shortcode",
+    "category": "WordPress",
+    "level": "base",
+    "shortDefinition": "Código entre corchetes para insertar contenido en WordPress.",
+    "whatItIs": "Permite mostrar funciones de plugin dentro de páginas o posts.",
+    "whatItIsFor": "Sirve para portales, formularios, listados o widgets simples.",
+    "whenToUse": "Úsalo cuando el usuario debe pegar algo en una página WP.",
+    "realExample": "`[timeguard_portal]` podría mostrar portal cliente.",
+    "professionalPhrase": "“El portal se inserta con shortcode.”",
+    "relatedTerms": [
+      "WordPress",
+      "Plugin",
+      "PHP"
+    ],
+    "miniChallenge": "Imagina un shortcode para mostrar una app.",
+    "commonMistake": "Crear shortcodes sin documentar cómo se usan.",
+    "memoryHook": "Shortcode = etiqueta mágica de WordPress."
+  },
+  {
+    "id": "zip",
+    "term": "ZIP",
+    "category": "Automatización",
+    "level": "base",
+    "shortDefinition": "Archivo comprimido que agrupa una carpeta o proyecto.",
+    "whatItIs": "Empaqueta archivos para enviar, instalar o archivar.",
+    "whatItIsFor": "Sirve especialmente para entregar plugins WordPress instalables.",
+    "whenToUse": "Úsalo cuando necesites subir o compartir un plugin completo.",
+    "realExample": "TimeGuard Pro debe entregarse como ZIP listo para instalar.",
+    "professionalPhrase": "“Genera el ZIP excluyendo node_modules y .git.”",
+    "relatedTerms": [
+      "Plugin WordPress",
+      "exports",
+      "Compress-Archive"
+    ],
+    "miniChallenge": "Piensa qué carpetas no deben entrar en un ZIP final.",
+    "commonMistake": "Meter node_modules, .git o builds innecesarios dentro del ZIP.",
+    "memoryHook": "ZIP = paquete entregable."
+  },
+  {
+    "id": "node-modules",
+    "term": "node_modules",
+    "category": "Backend",
+    "level": "base",
+    "shortDefinition": "Carpeta donde npm instala dependencias.",
+    "whatItIs": "Puede ser muy grande y se reconstruye con `npm install`.",
+    "whatItIsFor": "Sirve para que el proyecto funcione localmente, pero no se sube a Git.",
+    "whenToUse": "Ignórala en Git y exclúyela de ZIPs.",
+    "realExample": "Un ZIP de plugin no debe incluir `node_modules`.",
+    "professionalPhrase": "“node_modules no se versiona.”",
+    "relatedTerms": [
+      "npm",
+      ".gitignore",
+      "dependencies"
+    ],
+    "miniChallenge": "Mira cuánto pesa una carpeta node_modules.",
+    "commonMistake": "Subir node_modules a GitHub o entregarlo en ZIP.",
+    "memoryHook": "node_modules = almacén temporal de paquetes."
+  },
+  {
+    "id": "dist",
+    "term": "dist",
+    "category": "Deploy",
+    "level": "base",
+    "shortDefinition": "Carpeta generada tras construir una app.",
+    "whatItIs": "Contiene archivos finales listos para servir.",
+    "whatItIsFor": "Sirve como salida de `npm run build` en muchos proyectos Vite.",
+    "whenToUse": "Úsala para publicar o verificar build, no para editar código fuente.",
+    "realExample": "Vite suele generar `dist/`.",
+    "professionalPhrase": "“El build genera dist.”",
+    "relatedTerms": [
+      "build",
+      "Vite",
+      "Deploy"
+    ],
+    "miniChallenge": "Ejecuta build y mira si aparece `dist`.",
+    "commonMistake": "Editar directamente archivos generados en dist.",
+    "memoryHook": "dist = resultado empaquetado."
+  },
+  {
+    "id": "readme",
+    "term": "README.md",
+    "category": "Entorno",
+    "level": "base",
+    "shortDefinition": "Documento principal de instrucciones de un proyecto.",
+    "whatItIs": "Explica qué es, cómo instalar, ejecutar y modificar un proyecto.",
+    "whatItIsFor": "Sirve para ti, colaboradores e IA futuras.",
+    "whenToUse": "Úsalo en todo proyecto serio.",
+    "realExample": "Jota Dev Center debe tener README con flujo y comandos.",
+    "professionalPhrase": "“Actualiza el README con instrucciones reales.”",
+    "relatedTerms": [
+      "Markdown",
+      "GitHub",
+      "Documentación"
+    ],
+    "miniChallenge": "Abre un README y localiza instalación y ejecución.",
+    "commonMistake": "Dejar README desactualizado y depender de memoria.",
+    "memoryHook": "README = manual mínimo del proyecto."
+  },
+  {
+    "id": "markdown",
+    "term": "Markdown",
+    "category": "Entorno",
+    "level": "base",
+    "shortDefinition": "Formato simple para escribir documentación con estructura.",
+    "whatItIs": "Permite títulos, listas, enlaces, tablas y código en texto plano.",
+    "whatItIsFor": "Sirve para READMEs, notas técnicas y documentación rápida.",
+    "whenToUse": "Úsalo para explicar proyectos sin Word ni PDF.",
+    "realExample": "GitHub muestra `README.md` en formato bonito.",
+    "professionalPhrase": "“Escríbelo en Markdown.”",
+    "relatedTerms": [
+      "README.md",
+      "Documentación",
+      "GitHub"
+    ],
+    "miniChallenge": "Escribe un título Markdown: `# Mi proyecto`.",
+    "commonMistake": "Usar documentos pesados para instrucciones simples de repo.",
+    "memoryHook": "Markdown = texto plano con formato útil."
+  },
+  {
+    "id": "documentation",
+    "term": "Documentación",
+    "category": "Entorno",
+    "level": "base",
+    "shortDefinition": "Explicación organizada de cómo funciona algo.",
+    "whatItIs": "Convierte conocimiento técnico en instrucciones consultables.",
+    "whatItIsFor": "Sirve para no depender de memoria y para guiar a IA o personas.",
+    "whenToUse": "Úsala en proyectos, comandos, decisiones y despliegues.",
+    "realExample": "Jota Dev Lexicon es documentación interactiva de vocabulario técnico.",
+    "professionalPhrase": "“Documenta el flujo para no perderlo.”",
+    "relatedTerms": [
+      "README.md",
+      "Markdown",
+      "Notas"
+    ],
+    "miniChallenge": "Documenta en 5 líneas cómo arrancar un proyecto.",
+    "commonMistake": "No documentar y repetir los mismos errores semanas después.",
+    "memoryHook": "Documentación = memoria externa."
+  },
+  {
+    "id": "fullstack",
+    "term": "Full-Stack",
+    "category": "Full-Stack",
+    "level": "base",
+    "shortDefinition": "Desarrollo que cubre frontend y backend.",
+    "whatItIs": "Implica trabajar tanto la interfaz como la lógica interna/API.",
+    "whatItIsFor": "Sirve para crear apps completas.",
+    "whenToUse": "Úsalo cuando una solución necesita pantalla y servidor.",
+    "realExample": "Jota Dev Center es full-stack local: React + Express.",
+    "professionalPhrase": "“Esto es una app full-stack local.”",
+    "relatedTerms": [
+      "Frontend",
+      "Backend",
+      "API"
+    ],
+    "miniChallenge": "Divide una app en frontend y backend.",
+    "commonMistake": "Decir full-stack cuando solo hay una landing visual.",
+    "memoryHook": "Full-stack = pantalla + motor."
+  },
+  {
+    "id": "saas",
+    "term": "SaaS",
+    "category": "Deploy",
+    "level": "intermedio",
+    "shortDefinition": "Software como servicio accesible online.",
+    "whatItIs": "Producto digital que usuarios usan desde navegador normalmente con cuenta y pago.",
+    "whatItIsFor": "Sirve para vender herramientas recurrentes o por planes.",
+    "whenToUse": "Úsalo para apps con usuarios, login, suscripción y soporte.",
+    "realExample": "MiApp puede evolucionar como SaaS familiar.",
+    "professionalPhrase": "“Este proyecto tiene lógica SaaS.”",
+    "relatedTerms": [
+      "Auth",
+      "Subscription",
+      "Vercel"
+    ],
+    "miniChallenge": "Piensa qué diferencia hay entre plugin y SaaS.",
+    "commonMistake": "Llamar SaaS a cualquier web informativa.",
+    "memoryHook": "SaaS = software online como producto."
+  },
+  {
+    "id": "mvp",
+    "term": "MVP",
+    "category": "Automatización",
+    "level": "base",
+    "shortDefinition": "Versión mínima viable para validar una idea.",
+    "whatItIs": "Incluye solo lo necesario para probar utilidad real.",
+    "whatItIsFor": "Sirve para lanzar rápido sin sobredesarrollar.",
+    "whenToUse": "Úsalo cuando una idea todavía necesita validación.",
+    "realExample": "Jota Dev Lexicon puede empezar como HTML local antes de React completo.",
+    "professionalPhrase": "“Primero hacemos un MVP funcional.”",
+    "relatedTerms": [
+      "Producto",
+      "Iteración",
+      "Scope"
+    ],
+    "miniChallenge": "Reduce una app grande a 3 funciones mínimas.",
+    "commonMistake": "Hacer versión enorme antes de validar uso real.",
+    "memoryHook": "MVP = lo mínimo que demuestra valor."
+  },
+  {
+    "id": "scope",
+    "term": "Scope",
+    "category": "Automatización",
+    "level": "intermedio",
+    "shortDefinition": "Alcance exacto de lo que entra o no entra en una fase.",
+    "whatItIs": "Define límites de un trabajo o versión.",
+    "whatItIsFor": "Sirve para evitar que un proyecto crezca sin control.",
+    "whenToUse": "Úsalo al pedir trabajo a Claude o a un equipo.",
+    "realExample": "Fase 1: app local web; Fase 2: Electron.",
+    "professionalPhrase": "“Dejemos Electron fuera del scope inicial.”",
+    "relatedTerms": [
+      "MVP",
+      "Roadmap",
+      "Prompt técnico"
+    ],
+    "miniChallenge": "Escribe qué NO entra en Jota Dev Center v1.",
+    "commonMistake": "No definir límites y acabar con una app a medias.",
+    "memoryHook": "Scope = borde de la obra."
+  },
+  {
+    "id": "roadmap",
+    "term": "Roadmap",
+    "category": "Automatización",
+    "level": "base",
+    "shortDefinition": "Plan por fases de evolución de un proyecto.",
+    "whatItIs": "Ordena funciones, prioridades y entregables.",
+    "whatItIsFor": "Sirve para no mezclar todo en la primera versión.",
+    "whenToUse": "Úsalo para productos, plugins y apps.",
+    "realExample": "Jota Dev Center: web local → mejoras → Electron.",
+    "professionalPhrase": "“Eso va en el roadmap, no en esta versión.”",
+    "relatedTerms": [
+      "MVP",
+      "Scope",
+      "Release"
+    ],
+    "miniChallenge": "Define 3 fases para una app tuya.",
+    "commonMistake": "Intentar meter roadmap completo en el primer sprint.",
+    "memoryHook": "Roadmap = mapa de evolución."
+  },
+  {
+    "id": "release",
+    "term": "Release",
+    "category": "Deploy",
+    "level": "base",
+    "shortDefinition": "Versión entregada o publicada de un software.",
+    "whatItIs": "Es un corte estable con cambios definidos.",
+    "whatItIsFor": "Sirve para controlar entregas, ZIPs, builds o producción.",
+    "whenToUse": "Úsalo cuando una versión queda lista para usar.",
+    "realExample": "TimeGuard Pro v2.3.8 puede ser una release.",
+    "professionalPhrase": "“Genera una release estable.”",
+    "relatedTerms": [
+      "Versionado",
+      "ZIP",
+      "Deploy"
+    ],
+    "miniChallenge": "Pon nombre de versión a una entrega: v1.0.0.",
+    "commonMistake": "Entregar sin número ni notas de versión.",
+    "memoryHook": "Release = entrega marcada."
+  },
+  {
+    "id": "versionado",
+    "term": "Versionado",
+    "category": "Git",
+    "level": "base",
+    "shortDefinition": "Sistema para nombrar versiones de un proyecto.",
+    "whatItIs": "Permite saber qué versión es nueva, estable o previa.",
+    "whatItIsFor": "Sirve para plugins, apps y entregas cliente.",
+    "whenToUse": "Úsalo en ZIPs, releases y changelogs.",
+    "realExample": "`timeguard-pro-v2.3.8.zip`.",
+    "professionalPhrase": "“Mantén versionado claro.”",
+    "relatedTerms": [
+      "Release",
+      "Changelog",
+      "Git"
+    ],
+    "miniChallenge": "Escribe una versión para una corrección menor.",
+    "commonMistake": "Cambiar archivos sin saber qué versión está instalada.",
+    "memoryHook": "Versionado = matrícula de cada entrega."
+  },
+  {
+    "id": "changelog",
+    "term": "Changelog",
+    "category": "Git",
+    "level": "base",
+    "shortDefinition": "Lista de cambios de cada versión.",
+    "whatItIs": "Resume qué se añadió, corrigió o eliminó.",
+    "whatItIsFor": "Sirve para recordar evolución y explicar entregas.",
+    "whenToUse": "Úsalo en plugins y productos.",
+    "realExample": "“v2.3.8: corrige logout, banner y print.”",
+    "professionalPhrase": "“Actualiza el changelog.”",
+    "relatedTerms": [
+      "Release",
+      "Versionado",
+      "README"
+    ],
+    "miniChallenge": "Escribe 3 líneas de changelog para un plugin.",
+    "commonMistake": "No registrar cambios y luego no saber qué versión sirve.",
+    "memoryHook": "Changelog = diario de versiones."
+  },
+  {
+    "id": "runtime",
+    "term": "Runtime",
+    "category": "Backend",
+    "level": "intermedio",
+    "shortDefinition": "Momento en que la app está ejecutándose.",
+    "whatItIs": "Es el entorno y tiempo donde el código corre realmente.",
+    "whatItIsFor": "Sirve para diferenciar errores al correr de errores al construir.",
+    "whenToUse": "Úsalo al analizar bugs.",
+    "realExample": "Un error runtime aparece al usar la app, no necesariamente en build.",
+    "professionalPhrase": "“Esto falla en runtime.”",
+    "relatedTerms": [
+      "Build error",
+      "Node.js",
+      "Browser"
+    ],
+    "miniChallenge": "Clasifica: error al pulsar botón = runtime o build.",
+    "commonMistake": "Confundir errores de build con errores de ejecución.",
+    "memoryHook": "Runtime = cuando la app está viva."
+  },
+  {
+    "id": "serverless",
+    "term": "Serverless",
+    "category": "Deploy",
+    "level": "intermedio",
+    "shortDefinition": "Modelo donde ejecutas funciones sin gestionar un servidor clásico.",
+    "whatItIs": "La plataforma lanza funciones bajo demanda.",
+    "whatItIsFor": "Sirve para APIs ligeras, formularios y tareas cortas.",
+    "whenToUse": "Úsalo cuando no necesitas servidor persistente.",
+    "realExample": "Vercel Functions son serverless.",
+    "professionalPhrase": "“Esto puede ir como función serverless.”",
+    "relatedTerms": [
+      "Vercel",
+      "API",
+      "Render"
+    ],
+    "miniChallenge": "Piensa si una tarea necesita estar viva siempre.",
+    "commonMistake": "Meter procesos largos en serverless.",
+    "memoryHook": "Serverless = función que despierta cuando la llaman."
+  },
+  {
+    "id": "cdn",
+    "term": "CDN",
+    "category": "Deploy",
+    "level": "intermedio",
+    "shortDefinition": "Red para servir archivos rápido desde ubicaciones cercanas.",
+    "whatItIs": "Distribuye imágenes, CSS, JS o assets en muchos puntos.",
+    "whatItIsFor": "Sirve para mejorar velocidad de carga global.",
+    "whenToUse": "Úsalo con imágenes, audios y assets públicos.",
+    "realExample": "Bunny CDN puede servir assets de Stories.",
+    "professionalPhrase": "“Las imágenes van por CDN.”",
+    "relatedTerms": [
+      "Storage",
+      "Bunny",
+      "Assets"
+    ],
+    "miniChallenge": "Piensa qué archivos conviene servir por CDN.",
+    "commonMistake": "Servir assets pesados desde un backend lento.",
+    "memoryHook": "CDN = autopista rápida de archivos."
+  },
+  {
+    "id": "assets",
+    "term": "Assets",
+    "category": "Frontend",
+    "level": "base",
+    "shortDefinition": "Archivos visuales o multimedia usados por una app.",
+    "whatItIs": "Incluyen imágenes, iconos, fuentes, audios y vídeos.",
+    "whatItIsFor": "Sirven para diseño, marca y contenido visual.",
+    "whenToUse": "Organízalos en carpetas claras.",
+    "realExample": "Logos, banners y personajes de MiApp son assets.",
+    "professionalPhrase": "“Faltan assets optimizados.”",
+    "relatedTerms": [
+      "CDN",
+      "Storage",
+      "Frontend"
+    ],
+    "miniChallenge": "Localiza la carpeta `assets` o `public`.",
+    "commonMistake": "Mezclar assets originales, finales y pesados sin estructura.",
+    "memoryHook": "Assets = materiales visuales del proyecto."
+  },
+  {
+    "id": "public-folder",
+    "term": "public",
+    "category": "Frontend",
+    "level": "base",
+    "shortDefinition": "Carpeta para archivos estáticos servidos directamente.",
+    "whatItIs": "Suele contener iconos, imágenes y archivos accesibles por URL.",
+    "whatItIsFor": "Sirve para assets que no necesitan importarse en código.",
+    "whenToUse": "Úsala para favicons, imágenes simples o archivos públicos.",
+    "realExample": "Un logo en `public/logo.png` puede abrirse directamente.",
+    "professionalPhrase": "“Pon ese asset en public.”",
+    "relatedTerms": [
+      "Assets",
+      "Vite",
+      "Frontend"
+    ],
+    "miniChallenge": "Busca si un proyecto Vite tiene carpeta `public`.",
+    "commonMistake": "Meter código fuente dentro de public.",
+    "memoryHook": "public = escaparate de archivos estáticos."
+  },
+  {
+    "id": "src-folder",
+    "term": "src",
+    "category": "Frontend",
+    "level": "base",
+    "shortDefinition": "Carpeta principal del código fuente.",
+    "whatItIs": "Contiene componentes, estilos, lógica y entrada de la app.",
+    "whatItIsFor": "Sirve para separar código editable de archivos generados o públicos.",
+    "whenToUse": "Trabaja normalmente dentro de `src`.",
+    "realExample": "React suele tener `src/App.tsx` y `src/main.tsx`.",
+    "professionalPhrase": "“La lógica de UI está en src.”",
+    "relatedTerms": [
+      "React",
+      "Componentes",
+      "App.tsx"
+    ],
+    "miniChallenge": "Abre `src` y mira qué carpetas contiene.",
+    "commonMistake": "Editar dist en vez de src.",
+    "memoryHook": "src = taller del código fuente."
+  },
+  {
+    "id": "app-tsx",
+    "term": "App.tsx",
+    "category": "Frontend",
+    "level": "base",
+    "shortDefinition": "Componente principal típico en apps React TypeScript.",
+    "whatItIs": "Suele ordenar la pantalla y cargar componentes principales.",
+    "whatItIsFor": "Sirve como entrada visual de la aplicación.",
+    "whenToUse": "Revísalo para entender estructura inicial.",
+    "realExample": "Jota Dev Lexicon tiene `App.tsx` como núcleo UI.",
+    "professionalPhrase": "“Empieza revisando App.tsx.”",
+    "relatedTerms": [
+      "React",
+      "main.tsx",
+      "Componentes"
+    ],
+    "miniChallenge": "Abre App.tsx y lista qué componentes usa.",
+    "commonMistake": "Meter toda la app en App.tsx sin separar componentes.",
+    "memoryHook": "App.tsx = tablero principal de React."
+  },
+  {
+    "id": "main-tsx",
+    "term": "main.tsx",
+    "category": "Frontend",
+    "level": "base",
+    "shortDefinition": "Archivo que monta React en el HTML.",
+    "whatItIs": "Conecta la app React con el elemento raíz del documento.",
+    "whatItIsFor": "Sirve como arranque del frontend.",
+    "whenToUse": "Rara vez lo tocas mucho tras crear el proyecto.",
+    "realExample": "`main.tsx` renderiza `<App />`.",
+    "professionalPhrase": "“main.tsx es el punto de entrada.”",
+    "relatedTerms": [
+      "React",
+      "App.tsx",
+      "Vite"
+    ],
+    "miniChallenge": "Localiza dónde se importa App en main.tsx.",
+    "commonMistake": "Modificar main.tsx sin necesidad.",
+    "memoryHook": "main.tsx = interruptor de encendido."
+  },
+  {
+    "id": "cors",
+    "term": "CORS",
+    "category": "Backend",
+    "level": "intermedio",
+    "shortDefinition": "Regla del navegador que controla peticiones entre dominios.",
+    "whatItIs": "Protege qué sitios pueden llamar a una API desde el navegador.",
+    "whatItIsFor": "Sirve para seguridad, pero puede bloquear llamadas legítimas.",
+    "whenToUse": "Revísalo si frontend y backend están en URLs/puertos distintos.",
+    "realExample": "React en 5173 llamando a Express en 3333 puede requerir CORS.",
+    "professionalPhrase": "“Parece un problema de CORS.”",
+    "relatedTerms": [
+      "API",
+      "Frontend",
+      "Backend"
+    ],
+    "miniChallenge": "Identifica frontend URL y backend URL de una app.",
+    "commonMistake": "Pensar que todo error de API es CORS. Primero lee el mensaje.",
+    "memoryHook": "CORS = portero entre dominios."
+  },
+  {
+    "id": "http",
+    "term": "HTTP",
+    "category": "Backend",
+    "level": "base",
+    "shortDefinition": "Protocolo usado por navegador y APIs para comunicarse.",
+    "whatItIs": "Define métodos como GET y POST y códigos de respuesta.",
+    "whatItIsFor": "Sirve para webs, APIs y servicios online.",
+    "whenToUse": "Úsalo al hablar de llamadas entre frontend y backend.",
+    "realExample": "`http://localhost:3333/api/projects` usa HTTP.",
+    "professionalPhrase": "“La API responde por HTTP.”",
+    "relatedTerms": [
+      "GET",
+      "POST",
+      "Status code"
+    ],
+    "miniChallenge": "Observa una URL y reconoce si usa http o https.",
+    "commonMistake": "Ignorar códigos HTTP al depurar.",
+    "memoryHook": "HTTP = idioma de la web."
+  },
+  {
+    "id": "status-code",
+    "term": "Código HTTP",
+    "category": "Backend",
+    "level": "intermedio",
+    "shortDefinition": "Número que indica resultado de una petición HTTP.",
+    "whatItIs": "Ejemplos: 200 correcto, 404 no encontrado, 500 error servidor.",
+    "whatItIsFor": "Sirve para diagnosticar APIs.",
+    "whenToUse": "Úsalo cuando una petición falla o no devuelve lo esperado.",
+    "realExample": "404 en `/api/projects` indica endpoint no encontrado.",
+    "professionalPhrase": "“La API devuelve 500.”",
+    "relatedTerms": [
+      "HTTP",
+      "API",
+      "Debug"
+    ],
+    "miniChallenge": "Aprende 200, 400, 401, 404 y 500.",
+    "commonMistake": "Ver “error” sin mirar el código HTTP.",
+    "memoryHook": "Código HTTP = semáforo de la petición."
+  },
+  {
+    "id": "modal",
+    "term": "Modal",
+    "category": "Frontend",
+    "level": "base",
+    "shortDefinition": "Ventana superpuesta dentro de una interfaz.",
+    "whatItIs": "Pide confirmación, datos o muestra detalle sin cambiar de página.",
+    "whatItIsFor": "Sirve para confirmar push, pedir mensaje de commit o mostrar notas.",
+    "whenToUse": "Úsalo cuando una acción necesita atención puntual.",
+    "realExample": "Jota Dev Center debe pedir mensaje de commit en un modal.",
+    "professionalPhrase": "“Abrimos un modal de confirmación.”",
+    "relatedTerms": [
+      "UI",
+      "React",
+      "Formulario"
+    ],
+    "miniChallenge": "Piensa qué acciones peligrosas necesitan modal.",
+    "commonMistake": "Usar modales para todo y molestar al usuario.",
+    "memoryHook": "Modal = pausa con decisión."
+  },
+  {
+    "id": "localstorage",
+    "term": "localStorage",
+    "category": "Frontend",
+    "level": "base",
+    "shortDefinition": "Almacenamiento simple del navegador.",
+    "whatItIs": "Guarda pequeños datos en el navegador del usuario.",
+    "whatItIsFor": "Sirve para favoritos, preferencias y progreso ligero.",
+    "whenToUse": "Úsalo para datos no críticos en apps locales.",
+    "realExample": "Jota Dev Lexicon guarda favoritos con localStorage.",
+    "professionalPhrase": "“Guardamos favoritos en localStorage.”",
+    "relatedTerms": [
+      "Frontend",
+      "JSON",
+      "Persistencia"
+    ],
+    "miniChallenge": "Marca un favorito y recarga la página.",
+    "commonMistake": "Guardar datos sensibles en localStorage.",
+    "memoryHook": "localStorage = bolsillo del navegador."
+  },
+  {
+    "id": "persistencia",
+    "term": "Persistencia",
+    "category": "Bases de datos",
+    "level": "base",
+    "shortDefinition": "Capacidad de guardar datos para que no se pierdan al cerrar.",
+    "whatItIs": "Puede ser en JSON, localStorage, base de datos o archivos.",
+    "whatItIsFor": "Sirve para notas, ajustes, usuarios y progreso.",
+    "whenToUse": "Úsala cuando necesitas recordar algo entre sesiones.",
+    "realExample": "Notas por proyecto en Jota Dev Center necesitan persistencia.",
+    "professionalPhrase": "“Esto necesita persistencia.”",
+    "relatedTerms": [
+      "localStorage",
+      "JSON",
+      "Database"
+    ],
+    "miniChallenge": "Clasifica qué datos pueden ser temporales y cuáles persistentes.",
+    "commonMistake": "Guardar todo solo en memoria y perderlo al cerrar.",
+    "memoryHook": "Persistencia = que sobreviva al cierre."
+  },
+  {
+    "id": "arquitectura",
+    "term": "Arquitectura",
+    "category": "Full-Stack",
+    "level": "intermedio",
+    "shortDefinition": "Forma en que se organiza un sistema.",
+    "whatItIs": "Define piezas, responsabilidades y comunicación entre ellas.",
+    "whatItIsFor": "Sirve para que una app crezca sin volverse caos.",
+    "whenToUse": "Úsala al diseñar proyectos antes de codificar.",
+    "realExample": "Jota Dev Center: frontend React, backend Express, data JSON, scripts Windows.",
+    "professionalPhrase": "“Definamos arquitectura antes de implementar.”",
+    "relatedTerms": [
+      "Frontend",
+      "Backend",
+      "API"
+    ],
+    "miniChallenge": "Dibuja 4 bloques de una app: UI, API, data, comandos.",
+    "commonMistake": "Empezar a programar sin decidir estructura.",
+    "memoryHook": "Arquitectura = plano del sistema."
+  },
+  {
+    "id": "monorepo",
+    "term": "Monorepo",
+    "category": "Git",
+    "level": "avanzado",
+    "shortDefinition": "Repositorio que contiene varios proyectos o paquetes.",
+    "whatItIs": "Agrupa apps, librerías y servicios relacionados en un solo repo.",
+    "whatItIsFor": "Sirve cuando varias partes comparten código o versión.",
+    "whenToUse": "Úsalo solo si realmente simplifica coordinación.",
+    "realExample": "Un ecosistema grande podría tener app, API y paquetes compartidos.",
+    "professionalPhrase": "“Esto podría ser monorepo, pero quizá es demasiado.”",
+    "relatedTerms": [
+      "Repositorio",
+      "package.json",
+      "workspace"
+    ],
+    "miniChallenge": "Piensa si tus plugins deben vivir juntos o separados.",
+    "commonMistake": "Hacer monorepo sin necesidad y complicar deploys.",
+    "memoryHook": "Monorepo = varios proyectos en una casa."
+  },
+  {
+    "id": "workspace",
+    "term": "Workspace",
+    "category": "Entorno",
+    "level": "intermedio",
+    "shortDefinition": "Espacio de trabajo que agrupa carpetas o paquetes.",
+    "whatItIs": "Puede referirse a VS Code, npm workspaces o entorno de proyecto.",
+    "whatItIsFor": "Sirve para organizar varios módulos relacionados.",
+    "whenToUse": "Úsalo cuando trabajas con varias carpetas conectadas.",
+    "realExample": "VS Code puede abrir un workspace con app y backend.",
+    "professionalPhrase": "“Abre el workspace completo.”",
+    "relatedTerms": [
+      "VS Code",
+      "Monorepo",
+      "Proyecto"
+    ],
+    "miniChallenge": "Diferencia carpeta simple vs workspace.",
+    "commonMistake": "Llamar workspace a cualquier carpeta sin contexto.",
+    "memoryHook": "Workspace = mesa de trabajo organizada."
+  },
+  {
+    "id": "ide",
+    "term": "IDE",
+    "category": "Entorno",
+    "level": "base",
+    "shortDefinition": "Editor avanzado para programar.",
+    "whatItIs": "Integra edición, terminal, extensiones, Git y depuración.",
+    "whatItIsFor": "Sirve para trabajar código con contexto visual.",
+    "whenToUse": "Úsalo para proyectos completos, no archivos sueltos.",
+    "realExample": "VS Code y Cursor son editores/IDE ligeros.",
+    "professionalPhrase": "“Abre el proyecto en el IDE.”",
+    "relatedTerms": [
+      "VS Code",
+      "Cursor",
+      "Editor"
+    ],
+    "miniChallenge": "Abre una carpeta completa en VS Code.",
+    "commonMistake": "Editar proyectos grandes solo con bloc de notas.",
+    "memoryHook": "IDE = taller visual de código."
+  },
+  {
+    "id": "vscode",
+    "term": "VS Code",
+    "category": "Entorno",
+    "level": "base",
+    "shortDefinition": "Editor de código muy usado y extensible.",
+    "whatItIs": "Permite abrir carpetas, usar terminal, Git, extensiones y depuración.",
+    "whatItIsFor": "Sirve como base estable para proyectos.",
+    "whenToUse": "Úsalo como editor principal si trabajas con Claude/Codex por terminal.",
+    "realExample": "`code .` abre el proyecto actual en VS Code.",
+    "professionalPhrase": "“VS Code es mi editor base.”",
+    "relatedTerms": [
+      "IDE",
+      "PowerShell",
+      "Cursor"
+    ],
+    "miniChallenge": "Ejecuta `code .` desde una carpeta de proyecto.",
+    "commonMistake": "Abrir archivos sueltos y perder vista del proyecto completo.",
+    "memoryHook": "VS Code = taller principal visual."
+  },
+  {
+    "id": "cursor",
+    "term": "Cursor",
+    "category": "Entorno",
+    "level": "base",
+    "shortDefinition": "Editor basado en VS Code con IA integrada.",
+    "whatItIs": "Añade funciones de IA dentro del editor.",
+    "whatItIsFor": "Sirve si quieres editar visualmente con IA en el propio IDE.",
+    "whenToUse": "Úsalo como complemento, no necesariamente como centro, si ya usas Claude/Codex por terminal.",
+    "realExample": "Puedes abrir un proyecto con `cursor .` si está en PATH.",
+    "professionalPhrase": "“Cursor lo dejo como editor IA opcional.”",
+    "relatedTerms": [
+      "VS Code",
+      "IA Coding",
+      "PATH"
+    ],
+    "miniChallenge": "Prueba si `cursor .` funciona en PowerShell.",
+    "commonMistake": "Usar demasiadas IA tocando el mismo repo sin Git limpio.",
+    "memoryHook": "Cursor = VS Code con IA integrada."
+  },
+  {
+    "id": "notepad-plus-plus",
+    "term": "Notepad++",
+    "category": "Entorno",
+    "level": "base",
+    "shortDefinition": "Editor ligero para archivos sueltos.",
+    "whatItIs": "Abre rápido textos, JSON, scripts y logs.",
+    "whatItIsFor": "Sirve para editar archivos concretos sin cargar un proyecto completo.",
+    "whenToUse": "Úsalo para `.txt`, `.ps1`, `.json`, logs o notas rápidas.",
+    "realExample": "Editar `$PROFILE` de PowerShell con Notepad++.",
+    "professionalPhrase": "“Para archivo suelto uso Notepad++.”",
+    "relatedTerms": [
+      "VS Code",
+      "Editor",
+      "PowerShell"
+    ],
+    "miniChallenge": "Abre un `.json` con Notepad++ y revisa formato.",
+    "commonMistake": "Usarlo como IDE principal para apps grandes.",
+    "memoryHook": "Notepad++ = navaja rápida de archivos."
+  }
+];
+</script>
+  <script>
+const cards = window.DEV_LEXICON_CARDS || [];
+const categories = ['Todos', ...Array.from(new Set(cards.map(c => c.category))).sort(), 'Favoritos'];
+const state = {
+  filter: 'Todos',
+  search: '',
+  selected: cards[0]?.id,
+  view: 'cards',
+  quizIndex: 0,
+  quizAnswered: false,
+  quizCorrect: null,
+};
+
+const $ = (sel) => document.querySelector(sel);
+const $$ = (sel) => Array.from(document.querySelectorAll(sel));
+const favKey = 'jota-dev-lexicon:favorites';
+const seenKey = 'jota-dev-lexicon:seen';
+const notesKey = 'jota-dev-lexicon:notes';
+const getSet = (key) => new Set(JSON.parse(localStorage.getItem(key) || '[]'));
+const saveSet = (key, set) => localStorage.setItem(key, JSON.stringify([...set]));
+const getNotes = () => JSON.parse(localStorage.getItem(notesKey) || '{}');
+const saveNotes = (notes) => localStorage.setItem(notesKey, JSON.stringify(notes));
+
+const iconMap = {
+  'Entorno': '🧭', 'Terminal': '⌨️', 'Git': '🌿', 'Frontend': '🖥️', 'Backend': '⚙️',
+  'Full-Stack': '🧩', 'Deploy': '🚀', 'IA Coding': '🤖', 'Automatización': '⚡',
+  'Desktop Apps': '🪟', 'WordPress': '🧱', 'Bases de datos': '🗄️'
+};
+
+const quiz = [
+  { q: '¿Qué usarías para crear la interfaz visual de una app?', a: 'React', options: ['React','Git','Render','PATH'] },
+  { q: '¿Qué comando suele arrancar una app local en desarrollo?', a: 'npm run dev', options: ['git push','npm run dev','git pull','code .'] },
+  { q: '¿Qué significa localhost?', a: 'Tu propio ordenador', options: ['Un servidor público','Tu propio ordenador','GitHub','Una base de datos'] },
+  { q: '¿Qué herramienta despliega automáticamente desde GitHub?', a: 'Vercel', options: ['Notepad++','Vercel','PowerShell','CSS'] },
+  { q: '¿Qué comando sube commits a GitHub?', a: 'git push', options: ['git add','git push','npm install','npm run build'] },
+  { q: '¿Qué tecnología convierte una app web en app de escritorio?', a: 'Electron', options: ['Vite','Electron','Supabase','Markdown'] },
+  { q: '¿Qué archivo define scripts y dependencias en Node?', a: 'package.json', options: ['README.md','package.json','index.html','.gitignore'] },
+  { q: '¿Qué servicio usarías para auth y base de datos rápida?', a: 'Supabase', options: ['Supabase','CSS','Vite','Notepad++'] },
+  { q: '¿Qué revisas antes de hacer commit para ver cambios?', a: 'git diff', options: ['git diff','npm -v','localhost','PATH'] },
+  { q: '¿Qué debes usar para guardar claves fuera del código?', a: 'Variables de entorno', options: ['Variables de entorno','Cards','Componentes','Shortcodes'] },
+];
+
+function filteredCards() {
+  const favs = getSet(favKey);
+  let list = cards;
+  if (state.filter === 'Favoritos') list = list.filter(c => favs.has(c.id));
+  else if (state.filter !== 'Todos') list = list.filter(c => c.category === state.filter);
+  const q = state.search.trim().toLowerCase();
+  if (q) {
+    list = list.filter(c => [c.term,c.category,c.shortDefinition,c.whatItIsFor,c.whenToUse,c.professionalPhrase,...c.relatedTerms].join(' ').toLowerCase().includes(q));
+  }
+  return list;
+}
+
+function renderSidebar() {
+  const el = $('#sidebar');
+  el.innerHTML = categories.map(cat => `<button class="side-item ${state.filter===cat?'active':''}" data-cat="${cat}"><span>${iconMap[cat] || (cat==='Todos'?'🏠':'⭐')}</span>${cat}</button>`).join('');
+  $$('.side-item').forEach(btn => btn.onclick = () => { state.filter = btn.dataset.cat; state.view='cards'; render(); });
+}
+
+function markSeen(id) { const s = getSet(seenKey); s.add(id); saveSet(seenKey, s); }
+function toggleFav(id) { const f = getSet(favKey); f.has(id) ? f.delete(id) : f.add(id); saveSet(favKey, f); render(); }
+
+function renderStats() {
+  const favs = getSet(favKey), seen = getSet(seenKey);
+  $('#statCards').textContent = cards.length;
+  $('#statFavs').textContent = favs.size;
+  $('#statSeen').textContent = seen.size;
+}
+
+function cardHtml(c) {
+  const favs = getSet(favKey), seen = getSet(seenKey);
+  return `<article class="card ${state.selected===c.id?'selected':''}" data-id="${c.id}">
+    <div class="card-top"><span class="cat">${iconMap[c.category] || '📌'} ${c.category}</span><button class="fav ${favs.has(c.id)?'on':''}" data-fav="${c.id}" title="Favorito">★</button></div>
+    <h3>${c.term}</h3>
+    <p>${c.shortDefinition}</p>
+    <div class="card-bottom"><span class="level">${c.level}</span>${seen.has(c.id)?'<span class="seen">vista</span>':''}</div>
+  </article>`;
+}
+
+function renderCards() {
+  const list = filteredCards();
+  $('#contentTitle').textContent = state.filter === 'Todos' ? 'Todas las tarjetas' : state.filter;
+  $('#grid').innerHTML = list.length ? list.map(cardHtml).join('') : '<div class="empty">No hay tarjetas con ese filtro.</div>';
+  $$('.card').forEach(card => card.onclick = (e) => {
+    if (e.target.matches('[data-fav]')) return;
+    state.selected = card.dataset.id; markSeen(state.selected); state.view='cards'; render();
+  });
+  $$('[data-fav]').forEach(btn => btn.onclick = (e) => { e.stopPropagation(); toggleFav(btn.dataset.fav); });
+  renderDetail();
+}
+
+function renderDetail() {
+  const c = cards.find(x => x.id === state.selected) || filteredCards()[0] || cards[0];
+  if (!c) return;
+  const favs = getSet(favKey); const notes = getNotes();
+  $('#detail').innerHTML = `<div class="detail-head"><span class="big-icon">${iconMap[c.category] || '📌'}</span><div><div class="detail-cat">${c.category} · ${c.level}</div><h2>${c.term}</h2><p>${c.shortDefinition}</p></div><button class="fav big ${favs.has(c.id)?'on':''}" id="detailFav">★</button></div>
+    <div class="detail-block"><strong>Qué es</strong><p>${c.whatItIs}</p></div>
+    <div class="detail-block"><strong>Para qué sirve</strong><p>${c.whatItIsFor}</p></div>
+    <div class="detail-block"><strong>Cuándo usarlo</strong><p>${c.whenToUse}</p></div>
+    <div class="detail-block example"><strong>Ejemplo real</strong><p>${c.realExample}</p></div>
+    <div class="phrase"><span>Frase profesional</span><button id="copyPhrase">Copiar</button><p>“${c.professionalPhrase}”</p></div>
+    <div class="detail-grid"><div><strong>Error común</strong><p>${c.commonMistake}</p></div><div><strong>Gancho de memoria</strong><p>${c.memoryHook}</p></div></div>
+    <div class="tags">${c.relatedTerms.map(t => `<button data-search-term="${t}">${t}</button>`).join('')}</div>
+    <div class="challenge"><strong>Mini reto</strong><p>${c.miniChallenge}</p></div>
+    <div class="notes"><label>Nota rápida para ti</label><textarea id="cardNote" placeholder="Ej: esto lo uso en Jota Dev Center para...">${notes[c.id] || ''}</textarea></div>`;
+  $('#detailFav').onclick = () => toggleFav(c.id);
+  $('#copyPhrase').onclick = async () => { try { await navigator.clipboard.writeText(c.professionalPhrase); $('#copyPhrase').textContent='Copiado'; setTimeout(()=>$('#copyPhrase').textContent='Copiar',1000); } catch(e){} };
+  $$('[data-search-term]').forEach(b => b.onclick = () => { state.search = b.dataset.searchTerm; $('#search').value=state.search; state.filter='Todos'; render(); });
+  $('#cardNote').oninput = () => { const n = getNotes(); n[c.id] = $('#cardNote').value; saveNotes(n); };
+}
+
+function renderSpark() {
+  const c = cards[Math.floor(Math.random()*cards.length)];
+  state.selected = c.id; markSeen(c.id);
+  $('#mainArea').innerHTML = `<section class="spark"><div class="spark-label">Chispa de 3 minutos</div><h1>${iconMap[c.category] || '📌'} ${c.term}</h1><p class="lead">${c.shortDefinition}</p><div class="spark-box"><strong>Cuándo usarlo</strong><p>${c.whenToUse}</p></div><div class="spark-box"><strong>Frase para sonar profesional</strong><p>“${c.professionalPhrase}”</p></div><div class="spark-box"><strong>Mini reto</strong><p>${c.miniChallenge}</p></div><button class="primary" id="anotherSpark">Otra chispa</button><button class="secondary" id="openFull">Ver tarjeta completa</button></section>`;
+  $('#anotherSpark').onclick = () => renderSpark();
+  $('#openFull').onclick = () => { state.view='cards'; render(); };
+}
+
+function renderQuiz() {
+  const q = quiz[state.quizIndex % quiz.length];
+  $('#mainArea').innerHTML = `<section class="quiz"><div class="spark-label">Mini quiz</div><h1>Pregunta ${state.quizIndex+1} de ${quiz.length}</h1><p class="lead">${q.q}</p><div class="options">${q.options.map(o => `<button class="option" data-answer="${o}">${o}</button>`).join('')}</div><div id="quizResult"></div><button class="primary" id="nextQuiz">Siguiente</button></section>`;
+  $('#nextQuiz').style.display='none';
+  $$('.option').forEach(btn => btn.onclick = () => {
+    const ok = btn.dataset.answer === q.a;
+    $$('.option').forEach(b => b.disabled = true);
+    btn.classList.add(ok ? 'correct':'wrong');
+    $('#quizResult').innerHTML = ok ? `<div class="ok">Correcto. ${q.a}</div>` : `<div class="bad">No. La respuesta correcta es: <strong>${q.a}</strong></div>`;
+    $('#nextQuiz').style.display='inline-flex';
+  });
+  $('#nextQuiz').onclick = () => { state.quizIndex++; renderQuiz(); };
+}
+
+function renderMap() {
+  const groups = Array.from(new Set(cards.map(c => c.category))).sort().map(cat => cards.filter(c=>c.category===cat));
+  $('#mainArea').innerHTML = `<section class="map"><h1>Mapa rápido del léxico</h1><p class="lead">Úsalo como índice mental. No memorices todo: aprende a reconocer cuándo se usa cada bloque.</p>${groups.map(g => `<div class="map-row"><h2>${iconMap[g[0].category] || '📌'} ${g[0].category}</h2><div>${g.map(c=>`<button data-open-card="${c.id}">${c.term}</button>`).join('')}</div></div>`).join('')}</section>`;
+  $$('[data-open-card]').forEach(b => b.onclick = () => { state.selected=b.dataset.openCard; markSeen(state.selected); state.view='cards'; render(); });
+}
+
+function renderPhrases() {
+  const phrases = [
+    ['React + Vite', '“Para este panel local uso React con Vite: rápido, simple y sin meter Next innecesariamente.”'],
+    ['Backend local', '“La UI no debe ejecutar comandos del sistema; eso lo hace un backend local con Node/Express.”'],
+    ['Git limpio', '“Antes de pedir cambios grandes a Claude, dejo Git limpio o reviso el diff.”'],
+    ['Vercel', '“El flujo natural es push a GitHub y despliegue automático en Vercel.”'],
+    ['Electron', '“Primero validamos como panel local web. Si funciona, lo envolvemos con Electron.”'],
+    ['Supabase', '“Supabase entra cuando necesito auth, base de datos o storage, no antes.”'],
+    ['Scope', '“Eso queda fuera del alcance de esta versión para no romper la base.”'],
+    ['Build', '“Si falla npm run build, no hacemos push todavía.”']
+  ];
+  $('#mainArea').innerHTML = `<section class="phrases"><h1>Frases de uso profesional</h1><p class="lead">Frases cortas para hablar con precisión con Claude, Codex, clientes o colaboradores.</p>${phrases.map(p=>`<div class="phrase-line"><strong>${p[0]}</strong><p>${p[1]}</p></div>`).join('')}</section>`;
+}
+
+function renderMain() {
+  if (state.view === 'spark') return renderSpark();
+  if (state.view === 'quiz') return renderQuiz();
+  if (state.view === 'map') return renderMap();
+  if (state.view === 'phrases') return renderPhrases();
+  $('#mainArea').innerHTML = `<section class="content"><div class="content-head"><div><h1 id="contentTitle">Todas las tarjetas</h1><p>Busca, filtra y abre tarjetas. Marca favoritas para repasar lo que más usas.</p></div><button class="secondary" id="printBtn">Imprimir / PDF</button></div><div class="split"><div id="grid" class="grid"></div><aside id="detail" class="detail"></aside></div></section>`;
+  $('#printBtn').onclick = () => window.print();
+  renderCards();
+}
+
+function render() { renderSidebar(); renderStats(); renderMain(); }
+
+document.addEventListener('DOMContentLoaded', () => {
+  $('#search').oninput = (e) => { state.search = e.target.value; state.view='cards'; render(); };
+  $('#viewCards').onclick = () => { state.view='cards'; render(); };
+  $('#viewSpark').onclick = () => { state.view='spark'; render(); };
+  $('#viewQuiz').onclick = () => { state.view='quiz'; render(); };
+  $('#viewMap').onclick = () => { state.view='map'; render(); };
+  $('#viewPhrases').onclick = () => { state.view='phrases'; render(); };
+  render();
+});
+</script>
+</body>
+</html>

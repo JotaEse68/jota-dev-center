@@ -1,0 +1,9 @@
+{
+  "defaultProjectsRoot": "",
+  "secondaryProjectsRoot": "",
+  "wslProjectsRoot": "/home/usuario/proyectos",
+  "defaultEditor": "vscode",
+  "primaryAI": "claude",
+  "secondaryAI": "codex",
+  "defaultPort": 3333
+}
