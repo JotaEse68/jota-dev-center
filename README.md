@@ -29,7 +29,7 @@ Es una **app de escritorio (Electron)** con un backend Express embebido. Tambié
 
 ## Qué es
 
-Un dashboard oscuro que centraliza tus proyectos y te permite, desde un solo sitio:
+Un dashboard que centraliza tus proyectos y te permite, desde un solo sitio:
 
 - Ver todos tus proyectos (Windows y WSL) con su tipo, entorno, favoritos, estado Git e integraciones activas.
 - Abrir **Claude Code** (acción principal destacada) y **Codex** (secundaria) en la carpeta del proyecto.
